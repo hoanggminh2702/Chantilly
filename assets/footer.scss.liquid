@@ -1,0 +1,145 @@
+footer {
+  &.footer {
+    padding-left: 5rem;
+    padding-right: 5rem;
+
+    @media (min-width: 320px) and (max-width: 767px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+
+      .footer__content-top {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .field {
+      border: none !important;
+      &:after {
+        box-shadow: none !important;
+      }
+
+      > input:first-child {
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+.chantilly-bottom {
+  @media (min-width: 320px) and (max-width: 767px) {
+    .footer__content-bottom-wrapper {
+      flex-direction: column-reverse;
+    }
+  }
+  .footer__localization {
+    justify-content: flex-start;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .footer__column--info {
+    justify-content: flex-start;
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (min-width: 320px) and (max-width: 767px) {
+      .footer__payment {
+        width: 100%;
+
+        .list-payment {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+
+  .footer__copyright.caption {
+    margin-top: 0;
+  }
+
+  #FooterLanguageForm {
+    padding-left: 0;
+  }
+}
+
+.footer-block__details-content {
+  &.chantilly-details-content {
+    max-width: 350px;
+  }
+
+  &.list-unstyled {
+    > li > a {
+      padding: 0;
+    }
+    li + li {
+      > a {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+.footer-block--newsletter-col {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  max-width: 350px;
+}
+
+.footer-block__newsletter {
+  width: 100%;
+  text-align: left !important;
+
+  .footer-block__heading {
+    margin-bottom: 1rem !important;
+  }
+}
+
+.footer-block.grid__item {
+  h2.footer-block__heading {
+    margin-bottom: 1rem !important;
+  }
+}
+
+.custom-email-field {
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.newsletter-form-col__btn {
+  font-size: 1.6rem !important;
+  width: fit-content;
+  padding: 0.6rem 2rem !important;
+  border-radius: 4px !important;
+}
+
+.chantilly-language-selector {
+  .disclosure {
+    .disclosure__list-wrapper {
+      transform: none !important;
+      margin-left: 0;
+      border-radius: 4px !important;
+      box-shadow: 5px 5px 30px -10px grey;
+    }
+  }
+  .disclosure__button {
+    border-radius: 4px !important;
+    margin-bottom: 0;
+    &:after {
+      box-shadow: none !important;
+      border-radius: 4px;
+    }
+
+    > svg {
+      transition: transform 0.2s linear;
+    }
+
+    &:focus {
+      > svg {
+        transform: rotate(-180deg) !important;
+      }
+    }
+  }
+}

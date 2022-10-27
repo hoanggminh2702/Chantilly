@@ -1,0 +1,110 @@
+<style>
+  .major-title-wrapper {
+    width: 100%;
+    max-width: 800px;
+    padding: 4rem;
+    margin: auto;
+  }
+
+  .major-title-container small,
+  .major-title-container p {
+    text-align: center;
+  }
+
+  .major-title-container small {
+    display: block;
+  }
+
+  .major-title-container p {
+    font-size: 2.4rem;
+    color: black;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+</style>
+<div class="major-title-container color-{{section.settings.color_scheme}} gradient">
+  <div class="major-title-wrapper">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'subtext' %}
+          <small>{{block.settings.subtext}}
+          </small>
+        {% when 'titletext' %}
+          <p>{{block.settings.titletext}}
+          </p>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Major Title",
+    "class": "major-title",
+    "settings": [
+      {
+        "type": "select",
+        "id": "color_scheme",
+        "options": [
+          {
+            "value": "accent-1",
+            "label": "t:sections.all.colors.accent_1.label"
+          },
+          {
+            "value": "accent-2",
+            "label": "t:sections.all.colors.accent_2.label"
+          },
+          {
+            "value": "background-1",
+            "label": "t:sections.all.colors.background_1.label"
+          },
+          {
+            "value": "background-2",
+            "label": "t:sections.all.colors.background_2.label"
+          }, {
+            "value": "inverse",
+            "label": "t:sections.all.colors.inverse.label"
+          }, {
+            "value": "chantilly",
+            "label": "Chantilly"
+          }
+        ],
+        "default": "chantilly",
+        "label": "t:sections.all.colors.label"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "subtext",
+        "name": "Sub Text",
+        "limit": 1,
+        "settings": [
+          {
+            "id": "subtext",
+            "type": "text",
+            "label": "Sub Text",
+            "default": "Chantilly Swimwear"
+          }
+        ]
+      }, {
+        "type": "titletext",
+        "name": "Title Text",
+        "limit": 1,
+        "settings": [
+          {
+            "id": "titletext",
+            "type": "textarea",
+            "label": "Title Text",
+            "default": "“We believe in two things: the pursuit of quality in everything we do, and looking after one another. Everything else should take care of itself.”"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Title",
+        "name": "Major Title"
+      }
+    ]
+  }
+{% endschema %}

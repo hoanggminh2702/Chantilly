@@ -1,0 +1,39 @@
+{% style %}
+  .about-us-container {
+    max-width: 720px;
+    width: 100%;
+    margin: auto;
+  }
+{% endstyle %}
+<div class="about-us-container">
+  <h1 class="title">{{section.settings.title}}</h1>
+
+  <img src="{{section.settings.title_img}}" alt="">
+  <div class="about-us-story">
+    {{section.settings.story}}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "About Us",
+    "class": "about-us",
+    "settings": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Title",
+        "default": "About us"
+      }, {
+        "id": "title_img",
+        "type": "image_picker",
+        "label": "Title Image"
+      }, {
+        "id": "story",
+        "type": "richtext",
+        "label": "Story About us",
+        "default": "<p></p>"
+      }
+    ]
+  }
+{% endschema %}

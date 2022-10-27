@@ -1,0 +1,165 @@
+<link type="text/css" href="{{ 'upper-footer.scss.css' | asset_url }}" rel="stylesheet">
+
+<div class="upper-footer-bar color-{{ section.settings.color_scheme }} gradient">
+  <div class="container py-4">
+    <div class="row gx-2 gy-4">
+      {% for block in section.blocks %}
+        {% if block.type == "icon" %}
+          {% assign iconSettings = block.settings %}
+          <div class="col-6 col-md-3">
+
+            {% capture icon %}
+              {% case iconSettings.icon %}
+                {% when 'truck' %}
+                  {% render 'chantilly-truck-icon' %}
+                {% when 'tag' %}
+                  {% render 'chantilly-tag-icon' %}
+                {% when 'gift' %}
+                  {% render 'chantilly-gift-icon' %}
+                {% when 'star' %}
+                  {% render 'chantilly-star-icon' %}
+                {% else %}
+              {% endcase %}
+            {% endcapture %}
+
+            {% if iconSettings.url != blank %}
+
+              <a class="icon-with-caption">
+                {{icon}}
+                <span class="icon-caption">{{iconSettings.caption}}
+                </span>
+              </a>
+            {% else %}
+              <div class="icon-with-caption">
+                {{icon}}
+                <span class="icon-caption">{{iconSettings.caption}}
+                </span>
+              </div>
+            {% endif %}
+          </div>
+
+        {% endif %}
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{%- comment -%}
+  <div class="col-6 col-md-3">
+  <div class="icon-with-caption">
+  <i class="bi bi-truck"></i>
+  <span>Free shipping</span>
+  </div>
+  </div>
+  <div class="col-6 col-md-3">
+  <div class="icon-with-caption">
+  {% render 'tag-icon' %}
+  <span>New styles</span>
+  </div>
+  </div>
+  <div class="col-6 col-md-3">
+  <div class="icon-with-caption">
+  <i class="bi bi-gift"></i>
+  <span>Gift cards</span>
+  </div>
+  </div>
+  <div class="col-6 col-md-3">
+  <div class="icon-with-caption">
+  <i class="bi bi-star"></i>
+  <span>5.0 Trustpilot rating</span>
+  </div>
+  </div>
+{%- endcomment -%}
+
+
+{% schema %}
+  {
+    "name": "Upper Footer Bar",
+    "class": "upper-footer-bar",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "select",
+        "id": "color_scheme",
+        "options": [
+          {
+            "value": "accent-1",
+            "label": "t:sections.all.colors.accent_1.label"
+          },
+          {
+            "value": "accent-2",
+            "label": "t:sections.all.colors.accent_2.label"
+          },
+          {
+            "value": "background-1",
+            "label": "t:sections.all.colors.background_1.label"
+          },
+          {
+            "value": "background-2",
+            "label": "t:sections.all.colors.background_2.label"
+          }, {
+            "value": "inverse",
+            "label": "t:sections.all.colors.inverse.label"
+          }, {
+            "value": "chantilly",
+            "label": "Chantilly"
+          }
+        ],
+        "default": "chantilly",
+        "label": "t:sections.all.colors.label"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "icon",
+        "name": "icon",
+        "settings": [
+          {
+            "id": "icon",
+            "label": "Icon",
+            "type": "select",
+            "options": [
+              {
+                "value": "truck",
+                "label": "Truck"
+              }, {
+                "value": "tag",
+                "label": "Tag"
+              }, {
+                "value": "gift",
+                "label": "Gift"
+              }, {
+                "value": "star",
+                "label": "Star"
+              }
+            ],
+            "default": "truck"
+          }, {
+            "id": "caption",
+            "label": "Caption",
+            "type": "textarea",
+            "default": "Caption"
+          }, {
+            "id": "url",
+            "label": "Icon Link",
+            "type": "url"
+
+          }
+        ]
+      }
+    ],
+    "default": {
+      "blocks": [
+        {
+          "type": "icon"
+        }, {
+          "type": "icon"
+        }, {
+          "type": "icon"
+        }, {
+          "type": "icon"
+        }
+      ]
+    }
+  }
+{% endschema %}

@@ -1,0 +1,77 @@
+.quote-and-img-container {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+
+  .image-side {
+    display: flex;
+    width: 100%;
+  }
+
+  .first-img,
+  .second-img {
+    width: 50%;
+  }
+
+  .quote-img-container {
+    width: 100%;
+    padding-top: 125%;
+    position: relative;
+  }
+  .quote-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .second-img {
+    transform: translate(-12.5%, -12.5%);
+    z-index: -1;
+  }
+
+  .quote-side {
+    width: 100%;
+    @media (min-width: 768px) {
+      padding-left: 15%;
+      padding-right: 15%;
+    }
+  }
+
+  .title {
+    margin-bottom: 1rem;
+    text-align: var(--text-align);
+  }
+
+  .quote-container {
+    font-size: 1.4rem;
+    text-align: var(--text-align);
+
+    > p {
+      font-size: inherit;
+      text-align: inherit;
+    }
+    > p:last-child {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: var(--btn-align);
+  }
+
+  .quote-link {
+    padding: 1rem 1.75rem;
+    box-shadow: 2px 2px 15px -8px grey;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+  }
+
+  // utils
+  .flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "sections": {
+    "c15b8994-542f-42e2-af4c-f4fd3d6854de": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15708114157751__c15b8994-542f-42e2-af4c-f4fd3d6854de-166680650841b7d832-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>The Story so far…<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "template--15708114157751__c15b8994-542f-42e2-af4c-f4fd3d6854de-166680650841b7d832-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Selling gorgeous bikinis all day, every day. Bestswimwear is your one stop shop for swimwear. We feature: Supportive bra sized swim separates in sizes D Cup to H Cup.<a href=\"https:\/\/chantilly.myshopify.com\/collections\/one-piece\" title=\"One Piece\">Flattering one pieces<\/a>. Dare to bare ultra cheeky cuts. Sustainable and eco-conscious suits.<a href=\"https:\/\/chantilly.myshopify.com\/collections\/b-swim\" title=\"B Swim\">Bold prints,<\/a>fresh colors, and<a href=\"https:\/\/chantilly.myshopify.com\/collections\/sunsets\" title=\"Sunsets\">luxe textures.<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15708114157751__c15b8994-542f-42e2-af4c-f4fd3d6854de-166680650841b7d832-0",
+        "template--15708114157751__c15b8994-542f-42e2-af4c-f4fd3d6854de-166680650841b7d832-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "d9522ffb-ea20-43f7-9832-259adddd351b": {
+      "type": "quote-and-image",
+      "settings": {
+        "first_img": "shopify:\/\/shop_images\/studded-flats.jpg",
+        "second_img": "shopify:\/\/shop_images\/fashion-portrait.jpg",
+        "quote_title": "Quote Title",
+        "quote": "<p>Our latest women's swimwear collection brings together this season's biggest trends on the beach, including vibrant tropical prints and bold neon shades, to create a beautiful range of bikinis, tankinis and swimsuit. Paired with chic cover-ups, sandals and a selection of beach dresses, you'll have the hottest look at the beach.<\/p>",
+        "btn_label": "Shop Collection",
+        "btn_url": "",
+        "switch_quote_position": "true",
+        "text_align": "center",
+        "btn_align": "center"
+      }
+    },
+    "987c7a59-0841-4861-a54b-4c91c79279ff": {
+      "type": "quote-and-image",
+      "settings": {
+        "first_img": "shopify:\/\/shop_images\/model-with-leather-jacket-over-shoulders.jpg",
+        "second_img": "shopify:\/\/shop_images\/woman-in-park-afternoon.jpeg",
+        "quote_title": "Quote Title",
+        "quote": "<p>Since then she has seen the label grow, having worked with the likes of Topshop, Le Bon Marche, Fenwicks, Selfridges, Marks and Spencers as well as a selective range of independents in the UK and internationally. <\/p>",
+        "btn_label": "Shop Collection",
+        "btn_url": "",
+        "switch_quote_position": "true",
+        "text_align": "left",
+        "btn_align": "start"
+      }
+    },
+    "08e64ff3-7206-46c4-b59d-917139b26a02": {
+      "type": "major-title",
+      "blocks": {
+        "c4a14d46-808c-4349-8b2f-f79a3d967959": {
+          "type": "titletext",
+          "settings": {
+            "titletext": "“We believe in two things: the pursuit of quality in everything we do, and looking after one another. Everything else should take care of itself.”"
+          }
+        },
+        "606ebc01-c306-4764-bc5b-c421611b329d": {
+          "type": "subtext",
+          "settings": {
+            "subtext": "Chantilly Swimwear"
+          }
+        }
+      },
+      "block_order": [
+        "c4a14d46-808c-4349-8b2f-f79a3d967959",
+        "606ebc01-c306-4764-bc5b-c421611b329d"
+      ],
+      "settings": {
+        "color_scheme": "chantilly"
+      }
+    }
+  },
+  "order": [
+    "c15b8994-542f-42e2-af4c-f4fd3d6854de",
+    "d9522ffb-ea20-43f7-9832-259adddd351b",
+    "987c7a59-0841-4861-a54b-4c91c79279ff",
+    "08e64ff3-7206-46c4-b59d-917139b26a02"
+  ]
+}

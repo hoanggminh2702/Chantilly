@@ -1,0 +1,171 @@
+{{ 'customer-review.scss.css' | asset_url | stylesheet_tag}}
+{% style %}
+  .customer-review-container {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+  }
+{% endstyle %}
+<div class="customer-review-container color-{{section.settings.color_scheme}} gradient">
+  {% for block in section.blocks %}
+    <div class="customer-review-row row container g-4 align-items-center">
+
+      {% assign blockSettings = block.settings %}
+      <div class="col-12 col-md-6">
+        <p class="customer-review-label">Customer Reviews</p>
+        {% if blockSettings.rating > 0 %}
+
+          <div class="rating-star-container">
+            {% for numberStar in (0..blockSettings.rating) %}
+              {% render 'chantilly-black-star-icon' %}
+            {% endfor range%}
+          </div>
+        {% endif %}
+        {% if blockSettings.text != blank %}
+          <p class="review-text">{{blockSettings.text}}
+          </p>
+        {% endif %}
+        {% if blockSettings.customer != blank %}
+          <small class="customer">
+            —
+            {{blockSettings.customer}}
+          </small>
+        {% endif %}
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="img-side">
+          <div class="product-img-container">
+            {% assign img = blockSettings.product_image %}
+            {% if img != blank %}
+              <img class="product-img ratio-img" src="{{blockSettings.product_image | img_url: 'master'}}" alt="">
+            {% else %}
+              {{'product-1' | placeholder_svg_tag: 'product-img ratio-img'}}
+            {% endif %}
+          </div>
+        </div>
+        {% if blockSettings.collection != blank %}
+          <span>{{collection.title}}
+          </span>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% schema %}
+  {
+    "name": "Customer review",
+    "class": "customer-review",
+    "settings": [
+      {
+        "type": "select",
+        "id": "color_scheme",
+        "options": [
+          {
+            "value": "accent-1",
+            "label": "t:sections.all.colors.accent_1.label"
+          },
+          {
+            "value": "accent-2",
+            "label": "t:sections.all.colors.accent_2.label"
+          },
+          {
+            "value": "background-1",
+            "label": "t:sections.all.colors.background_1.label"
+          },
+          {
+            "value": "background-2",
+            "label": "t:sections.all.colors.background_2.label"
+          }, {
+            "value": "inverse",
+            "label": "t:sections.all.colors.inverse.label"
+          }, {
+            "value": "chantilly",
+            "label": "Chantilly"
+          }
+        ],
+        "default": "chantilly",
+        "label": "t:sections.all.colors.label"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 24,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 24,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "margin_top",
+        "min": 0,
+        "max": 24,
+        "step": 4,
+        "unit": "px",
+        "label": "Margin Top",
+        "default": 12
+      }, {
+        "type": "range",
+        "id": "margin_bottom",
+        "min": 0,
+        "max": 24,
+        "step": 4,
+        "unit": "px",
+        "label": "Margin Bottom",
+        "default": 12
+      }
+    ],
+    "blocks": [
+      {
+        "type": "review-block",
+        "name": "Review Block",
+        "settings": [
+          {
+            "id": "rating",
+            "label": "Rating",
+            "type": "number",
+            "default": 5
+          },
+          {
+            "id": "text",
+            "label": "Text",
+            "type": "textarea"
+          },
+          {
+            "id": "customer",
+            "label": "Customer",
+            "type": "text"
+          },
+          {
+            "id": "product_image",
+            "label": "Image",
+            "type": "image_picker"
+          }, {
+            "id": "collection",
+            "label": "Collection",
+            "type": "collection"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Image And Text",
+        "name": "Customer Review"
+      }
+    ]
+  }
+{% endschema %}

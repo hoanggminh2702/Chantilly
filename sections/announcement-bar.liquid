@@ -1,0 +1,279 @@
+{%- for block in section.blocks -%}
+  {%- case block.type -%}
+    {%- when 'announcement' -%}
+      <div class="announcement-bar color-{{ block.settings.color_scheme }} gradient" role="region" aria-label="{{ 'sections.header.announcement' | t }}" {{ block.shopify_attributes }}>
+        {%- comment -%}
+          {%- if block.settings.text != blank -%}
+          {%- if block.settings.link != blank -%}
+          <a href="{{ block.settings.link }}" class="announcement-bar__link link link--text focus-inset animate-arrow">
+          {%- endif -%}
+          <p class="announcement-bar__message h5">
+          {{ block.settings.text | escape }}
+
+          </p>
+          {%- if block.settings.link != blank -%}
+          </a>
+          {%- endif -%}
+          {%- endif -%}
+        {%- endcomment -%}
+
+        {% if block.settings.isSocialLink %}
+          <div class="announcement-social-wrapper flex-2">
+            {% for socialBlock in section.blocks %}
+              {% if socialBlock.type == 'social' %}
+                <a href="{{socialBlock.settings.social_link}}" class="social-link">
+                  {% case socialBlock.settings.social_type %}
+                    {% when 'icon-facebook' %}
+                      {% render 'icon-facebook' %}
+                    {% when 'icon-instagram' %}
+                      {% render 'icon-instagram' %}
+                    {% when 'icon-youtube' %}
+                      {% render 'icon-youtube' %}
+                    {% else %}
+
+                  {% endcase %}
+
+                </a>
+              {% endif %}
+
+            {% endfor %}
+          </div>
+        {% endif %}
+
+
+        <div class="announcement-message-wrapper flex-1">
+          {% assign isActive = true %}
+          {% for announcementMessageBlock in section.blocks %}
+            {% if announcementMessageBlock.type == "announcement_message" %}
+              {% if announcementMessageBlock.settings.message != blank %}
+                <div class="announcement-message {% if isActive %}{% assign isActive = false %}{% else %}announcement-message-inactive{% endif %}">{{announcementMessageBlock.settings.message}}
+                </div>
+
+              {% endif %}
+            {% endif %}
+
+          {% endfor %}
+        </div>
+
+        <div class="announcement-other-link flex-2"></div>
+        <div class="clear-both"></div>
+      </div>
+  {%- endcase -%}
+{%- endfor -%}
+
+{% schema %}
+  {
+    "name": "t:sections.announcement-bar.name",
+    "max_blocks": 12,
+    "settings": [
+      {
+        "id": "announcement",
+        "type": "text",
+        "label": "Test Setings",
+        "default": "alksdjflasj"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "announcement",
+        "name": "t:sections.announcement-bar.blocks.announcement.name",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "select",
+            "id": "color_scheme",
+            "options": [
+              {
+                "value": "accent-1",
+                "label": "t:sections.all.colors.accent_1.label"
+              },
+              {
+                "value": "accent-2",
+                "label": "t:sections.all.colors.accent_2.label"
+              },
+              {
+                "value": "background-1",
+                "label": "t:sections.all.colors.background_1.label"
+              },
+              {
+                "value": "background-2",
+                "label": "t:sections.all.colors.background_2.label"
+              }, {
+                "value": "inverse",
+                "label": "t:sections.all.colors.inverse.label"
+              }, {
+                "value": "chantilly",
+                "label": "Chantilly"
+              }
+            ],
+            "default": "accent-1",
+            "label": "t:sections.all.colors.label"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+          }, {
+            "type": "checkbox",
+            "id": "isSocialLink",
+            "label": "Show Social Link",
+            "default": false
+          }
+        ]
+      }, {
+        "type": "announcement_message",
+        "name": "Announcement Message",
+        "limit": 5,
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "message",
+            "default": "<p>Welcome to our store</p>",
+            "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+          }
+        ]
+
+      }, {
+        "type": "social",
+        "name": "Social Link",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "select",
+            "id": "social_type",
+            "options": [
+              {
+                "value": "icon-facebook",
+                "label": "Facebook"
+              }, {
+                "value": "icon-instagram",
+                "label": "Instagram"
+              }, {
+                "value": "icon-youtube",
+                "label": "Youtube"
+              }
+            ],
+            "default": "icon-facebook",
+            "label": "Social Type"
+          }, {
+            "type": "url",
+            "id": "social_link",
+            "label": "Link"
+          }
+        ]
+
+      }
+    ],
+    "default": {
+      "blocks": [
+        {
+          "type": "announcement"
+        }, {
+          "type": "announcement_message"
+        }
+      ]
+    }
+  }
+{% endschema %}
+
+
+{% style %}
+  .announcement-bar {
+    display: flex;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .announcement-social-wrapper {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .announcement-message-wrapper {
+    overflow-y: hidden;
+    position: relative;
+    min-height: 1.2rem;
+    margin: 1.2rem 0;
+
+  }
+
+  .announcement-message-wrapper .announcement-message {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+
+    transition: top 0.4s 0.5s linear, opacity 0.5s linear;
+  }
+
+  .announcement-message p {
+    margin: 0;
+  }
+
+  .announcement-message-wrapper .announcement-message.announcement-message-inactive {
+    position: absolute;
+
+    top: 100%;
+    opacity: 0;
+
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+  }
+
+  .social-link > svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  // utils class
+  .flex-2 {
+    flex: 2;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+{% endstyle %}
+
+
+{% javascript %}
+  // Announcement Animation Handler
+  const announcements = document.getElementsByClassName("announcement-message");
+
+  let currentIndex = 0;
+
+  const switchDisplayAnnouncement = function() {
+    if (announcements.length > 1) {
+      if (currentIndex < announcements.length - 1 && currentIndex > 0) {
+        announcements[currentIndex - 1].classList.add("announcement-message-inactive");
+
+        announcements[currentIndex].classList.remove("announcement-message-inactive");
+        currentIndex += 1;
+        announcements[currentIndex].classList.add("announcement-message-inactive");
+      } else if (currentIndex == 0) {
+        announcements[announcements.length - 1].classList.add("announcement-message-inactive");
+        announcements[currentIndex].classList.remove("announcement-message-inactive");
+        currentIndex += 1;
+        announcements[currentIndex].classList.add("announcement-message-inactive");
+      } else {
+        announcements[currentIndex - 1].classList.add("announcement-message-inactive");
+        announcements[currentIndex].classList.remove("announcement-message-inactive");
+        currentIndex = 0;
+        announcements[currentIndex].classList.add("announcement-message-inactive");
+      }
+    }
+  };
+
+  const interval = setInterval(() => {
+    switchDisplayAnnouncement();
+  }, 4000);
+
+  if (announcements.length <= 1) {
+    clearInterval(interval);
+  }
+{% endjavascript %}

@@ -1,0 +1,61 @@
+<style>
+  .gallery-images-container .gallery-image-container {
+    display: block;
+    width: 100%;
+    padding-top: 75%;
+    position: relative;
+  }
+</style>
+{% if section.blocks.size > 0 %}
+  <div class="gallery-images-container w-full">
+    <div class="row g-0">
+      {% for block in section.blocks %}
+        {% if block.type == "gallery_image" %}
+        {% assign blockSettings = block.settings %}
+          <div class="col col-6 col-md-3">
+            {% assign img = blockSettings.image %}
+            <{%if blockSettings.url != blank%}a href={{blockSettings.url}}{%else%}div{%endif%} class="gallery-image-container">
+              {% if img != blank %}
+                <img src="{{img | img_url: 'master'}}" alt="" class="ratio-absolute-img">
+              {% else %}
+                {{'collection-4' |placeholder_svg_tag : 'ratio-absolute-img'}}
+              {% endif %}
+            </{%if blockSettings.url != blank%}a{%else%}div{%endif%}>
+          </div>
+        {% endif %}
+
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+  {
+    "name": "Gallery Images",
+    "class": "gallery-images",
+    "max_blocks": 4,
+    "blocks": [
+      {
+        "type": "gallery_image",
+        "name": "Gallery Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "gallery",
+        "name": "Gallery Images"
+      }
+    ]
+  }
+{% endschema %}
+

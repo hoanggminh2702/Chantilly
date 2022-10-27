@@ -1,0 +1,75 @@
+{{ 'spotlight-content.scss.css' | asset_url | stylesheet_tag}}
+
+<div class="spotlight-content-container">
+  <div class="row container gy-5 gy-md-0 gx-md-5">
+    {% for block in section.blocks %}
+      {% if block.type == 'spotlight-content' %}
+        {% assign blockSettings = block.settings %}
+        <div class="col col-12 col-md-6 col-lg-4">
+            <{% if blockSettings.url %}a href={{blockSettings.url}}{% else %}div{% endif %} class="spotlight-img-container">
+                {% assign img = blockSettings.image %}
+                {% if img != blank %}
+                    <img src="{{img | img_url: 'master'}}" alt="" class="ratio-absolute-img">
+
+                {% else %}
+                    {{'product-2' | placeholder_svg_tag: 'ratio-absolute-img'}}
+                {% endif %}
+           </{% if blockSettings.url %}a{% else %}div{% endif %}>
+          <div class="spotlight-text-container">
+            {% if blockSettings.title %}
+              <h2>{{blockSettings.title}}
+              </h2>
+
+            {% endif %}
+            {% if blockSettings.description %}
+                <div class="description-text">
+                    {{blockSettings.description}}
+                </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Spotlight Content",
+    "class": "spotlight-content",
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "spotlight-content",
+        "name": "Spotlight Content",
+        "settings": [
+          {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+          }, {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "default": "Title"
+          }, {
+            "id": "description",
+            "type": "richtext",
+            "label": "Description",
+            "default": "<p></p>"
+          }, {
+            "id": "url",
+            "type": "url",
+            "label": "Content Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Image And Text",
+        "name": "Spotlight Content"
+      }
+    ]
+  }
+{% endschema %}

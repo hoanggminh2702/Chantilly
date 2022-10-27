@@ -1,0 +1,147 @@
+{% style %}
+  .{{ section.id}}-align {
+    --btn-align: {{ section.settings.btn_align}};
+    --text-align: {{ section.settings.text_align}};
+  };
+{% endstyle %}
+<link type="text/css" href="{{ 'quote-and-image.scss.css' | asset_url }}" rel="stylesheet"><div class="quote-and-img-container container pt-16 pb-12">
+  <div class="row g-5 {{section.id}}-align {% if section.settings.switch_quote_position == "true" %}flex-row-reverse{% endif %}">
+    <div class="col col-12 col-md-6">
+      <div class="image-side flex w-full">
+        <div class="first-img w-[50%]">
+          <div class="quote-img-container pt-[125%]">
+            {% assign firstImage = section.settings.first_img %}
+            {% if firstImage != blank %}
+              <img src="{{firstImage | img_url: 'master'}}" class="quote-img"/>
+            {% else %}
+              {{'lifestyle-1' | placeholder_svg_tag: 'quote-img'}}
+
+            {% endif %}
+          </div>
+        </div>
+        <div class="second-img w-[50%]">
+          <div class="quote-img-container pt-[125%]">
+            {% assign secondImage = section.settings.second_img %}
+            {% if secondImage != blank %}
+              <img src="{{secondImage | img_url: 'master'}}" class="quote-img"/>
+            {% else %}
+              {{'lifestyle-1' | placeholder_svg_tag: 'quote-img'}}
+
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-12 col-md-6 flex flex-col justify-center">
+      <div class="quote-side w-full">
+        <h3 class="title mb-4">{{section.settings.quote_title}}
+        </h3>
+        <div class="text-[0.9rem] quote-container">{{section.settings.quote}}
+        </div>
+        <div class="btn-container">
+          <a href="{{section.settings.btn_url}}" class="quote-link btn btn-light border-[#212b36] px-4 py-2 uppercase text-[0.9rem]">
+            {{section.settings.btn_label}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Quote And Image",
+    "class": "quote-and-image",
+    "settings": [
+      {
+        "id": "first_img",
+        "type": "image_picker",
+        "label": "First Image"
+      },
+      {
+        "id": "second_img",
+        "type": "image_picker",
+        "label": "Second Image"
+      },
+      {
+        "id": "quote_title",
+        "type": "text",
+        "label": "Quote Title",
+        "default": "Quote Title"
+
+      },
+      {
+        "id": "quote",
+        "type": "richtext",
+        "default": "<p></p>",
+        "label": "Quote"
+      }, {
+
+        "id": "btn_label",
+        "type": "text",
+        "default": "Shop Collection",
+        "label": "Button Label"
+
+      }, {
+        "id": "btn_url",
+        "type": "url",
+        "label": "Button Link"
+      }, {
+        "id": "switch_quote_position",
+        "type": "select",
+        "label": "Switch Quote Position",
+        "options": [
+          {
+            "value": "true",
+            "label": "True"
+
+          }, {
+            "value": "false",
+            "label": "False"
+
+          }
+        ],
+        "default": "false"
+      }, {
+        "id": "text_align",
+        "type": "select",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left",
+        "label": "Align Text"
+      }, {
+        "id": "btn_align",
+        "type": "select",
+        "options": [
+          {
+            "value": "start",
+            "label": "Start"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }, {
+            "value": "end",
+            "label": "End"
+          }
+        ],
+        "default": "start",
+        "label": "Align Button"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Image And Paragraph",
+        "name": "Quote And Image"
+      }
+    ]
+  }
+{% endschema %}

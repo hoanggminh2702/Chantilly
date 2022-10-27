@@ -1,0 +1,68 @@
+{{ 'logo-list.scss.css' | asset_url | stylesheet_tag}}
+{% if section.blocks.size > 0 %}
+  <div class="logo-list-container">
+    <div class="container">
+      <div class="logo-list-count row g-2 g-md-5">
+        {% for block in section.blocks %}
+          {% if block.type == 'logo' %}
+            {% assign blockSettings = block.settings %}
+            <div class="col col-6 col-md-4">
+              <div class="logo-with-text">
+                <{%if blockSettings.url != blank%}a href={{blockSettings.url}}{%else%}div{%endif%} class="logo-container">
+                  <div class="logo-image-container">
+                    {% assign img = blockSettings.image %}
+                    {% if img != blank %}
+                      <img src="{{img | img_url: 'master'}}" alt="" class="logo-img">
+                    {% else %}
+                      {{'collection-1' | placeholder_svg_tag: "logo-img"}}
+                    {% endif %}
+                  </div>
+                </{%if blockSettings.url != blank%}a{%else%}div{%endif%}>
+                {% if blockSettings.sub_text %}
+                  <span class="logo-title">{{blockSettings.sub_text}}
+                  </span>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+
+{% endif %}
+{% schema %}
+  {
+    "name": "Logo List",
+    "class": "logo-list",
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "logo",
+        "name": "Logo",
+        "settings": [
+          {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+          }, {
+            "id": "sub_text",
+            "type": "text",
+            "label": "Sub Text"
+          }, {
+            "id": "url",
+            "type": "url",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Collection Logo",
+        "name": "List Logo"
+      }
+    ]
+  }
+{% endschema %}
