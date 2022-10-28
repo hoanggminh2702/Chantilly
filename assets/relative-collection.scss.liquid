@@ -1,0 +1,29 @@
+.relative-collection-container {
+  display: block;
+  width: 100%;
+  padding-top: 62.5%;
+  position: relative;
+
+  .collection-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+  }
+
+  .collection-title {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    color: white;
+    font-size: 2.5rem;
+
+    &.no-img {
+      color: black
+    }
+  }
+}

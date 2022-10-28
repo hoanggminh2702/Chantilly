@@ -3,36 +3,37 @@
     "d1f2c8d2-f0e4-4dec-825e-58a839f84439": {
       "type": "slideshow",
       "blocks": {
-        "template--15457143554231__d1f2c8d2-f0e4-4dec-825e-58a839f84439-166659705399d35ab5-0": {
+        "template--15457143554231__d1f2c8d2-f0e4-4dec-825e-58a839f84439-166659705399d35ab5-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/background.jpg",
-            "heading": "Image slide",
+            "image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
+            "heading": "California dreaming",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
+            "subheading": "Retro florals, classic polka dots & sunny shades",
+            "button_label": "SHOP NOW",
             "link": "",
             "button_style_secondary": true,
-            "box_align": "middle-center",
+            "box_align": "bottom-left",
             "show_text_box": false,
-            "text_alignment": "center",
+            "text_alignment": "left",
             "image_overlay_opacity": 20,
             "color_scheme": "background-1",
             "text_alignment_mobile": "center"
           }
         },
-        "template--15457143554231__d1f2c8d2-f0e4-4dec-825e-58a839f84439-166659705399d35ab5-1": {
+        "template--15457143554231__d1f2c8d2-f0e4-4dec-825e-58a839f84439-166659705399d35ab5-0": {
           "type": "slide",
           "settings": {
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
+            "image": "shopify:\/\/shop_images\/background.jpg",
+            "heading": "Rise & Shine",
+            "heading_size": "h0",
+            "subheading": "Bikinis, bodysuits and loungewear sustainably made in California",
+            "button_label": "SHOP THE COLLECTION",
             "link": "",
             "button_style_secondary": true,
-            "box_align": "middle-center",
+            "box_align": "bottom-left",
             "show_text_box": false,
-            "text_alignment": "center",
+            "text_alignment": "left",
             "image_overlay_opacity": 20,
             "color_scheme": "background-1",
             "text_alignment_mobile": "center"
@@ -40,8 +41,8 @@
         }
       },
       "block_order": [
-        "template--15457143554231__d1f2c8d2-f0e4-4dec-825e-58a839f84439-166659705399d35ab5-0",
-        "template--15457143554231__d1f2c8d2-f0e4-4dec-825e-58a839f84439-166659705399d35ab5-1"
+        "template--15457143554231__d1f2c8d2-f0e4-4dec-825e-58a839f84439-166659705399d35ab5-1",
+        "template--15457143554231__d1f2c8d2-f0e4-4dec-825e-58a839f84439-166659705399d35ab5-0"
       ],
       "settings": {
         "layout": "full_bleed",
@@ -72,7 +73,7 @@
         "color_scheme": "background-1",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 40
       }
     },
     "63b74c96-4429-47d4-a5ec-ae2193bb8aac": {
@@ -101,8 +102,8 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
         "padding_top": 28,
         "padding_bottom": 36
       }

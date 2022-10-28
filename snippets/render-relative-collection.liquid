@@ -1,0 +1,15 @@
+{{'relative-collection.scss.css' | asset_url | stylesheet_tag}}
+<a href="{{renderedCollection.url}}" class="relative-collection-container">
+  {% if  renderedCollection.image != blank %}
+    <img src="{{renderedCollection.image.src | img_url: 'master' }}" alt="{{renderedCollection.image.alt}}" class="collection-img"/>
+    <p class="collection-title">
+      {{renderedCollection.title}}
+    </p>
+  {% else %}
+    {{'lifestyle-2' | placeholder_svg_tag: 'collection-img'}}
+    <p class="collection-title no-img">
+      {{renderedCollection.title}}
+    </p>
+  {% endif %}
+
+</a>

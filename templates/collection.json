@@ -8,6 +8,11 @@
         "color_scheme": "background-1"
       }
     },
+    "040e2ef1-d2d8-437c-b645-b0beafe2ac3b": {
+      "type": "relative-collection",
+      "settings": {
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -29,6 +34,7 @@
   },
   "order": [
     "banner",
+    "040e2ef1-d2d8-437c-b645-b0beafe2ac3b",
     "product-grid"
   ]
 }
