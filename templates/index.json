@@ -56,22 +56,14 @@
     "rich_text": {
       "type": "rich-text",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Talk about your brand<\/p>",
-            "heading_size": "h1"
-          }
-        },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>This is a demonstration of the Symmetry theme for Shopify.<br\/>Swimwear by <a href=\"https:\/\/www.bestswimwear.com\/\" target=\"_blank\" title=\"https:\/\/www.bestswimwear.com\/\">BestSwimwear<\/a><\/p>"
           }
         }
       },
       "block_order": [
-        "heading",
         "text"
       ],
       "settings": {
@@ -81,6 +73,11 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 0
+      }
+    },
+    "63b74c96-4429-47d4-a5ec-ae2193bb8aac": {
+      "type": "home-collection-card",
+      "settings": {
       }
     },
     "featured_collection": {
@@ -132,12 +129,9 @@
         "quote": "<p>Committed to sustainability from the ground up. From recycled packaging, fibers, and even earth-inspired prints. Because we think swimwear should help clean up our waters, not pollute them.<\/p><p>Learn more <a href=\"https:\/\/chantilly.myshopify.com\/pages\/our-story\" title=\"OUR STORY\">here<\/a><\/p>",
         "btn_label": "Shop Collection",
         "btn_url": "",
-        "switch_quote_position": "false"
-      }
-    },
-    "63b74c96-4429-47d4-a5ec-ae2193bb8aac": {
-      "type": "home-collection-card",
-      "settings": {
+        "switch_quote_position": "false",
+        "text_align": "left",
+        "btn_align": "start"
       }
     },
     "73a736c5-028f-48a6-a0fa-7cf604e8b843": {
@@ -196,10 +190,26 @@
     },
     "8b02218b-2f84-4719-924f-ab8540180e44": {
       "type": "major-title",
+      "blocks": {
+        "c4f564f9-a2cd-481f-a26c-b3f7ad30d16f": {
+          "type": "subtext",
+          "settings": {
+            "subtext": "Chantilly Swimwear"
+          }
+        },
+        "c90705de-c224-46c7-990d-771202c8a8e4": {
+          "type": "titletext",
+          "settings": {
+            "titletext": "“We believe in two things: the pursuit of quality in everything we do, and looking after one another. Everything else should take care of itself.”"
+          }
+        }
+      },
+      "block_order": [
+        "c4f564f9-a2cd-481f-a26c-b3f7ad30d16f",
+        "c90705de-c224-46c7-990d-771202c8a8e4"
+      ],
       "settings": {
-        "color_scheme": "chantilly",
-        "subtitle": "Chantilly Swimwear",
-        "title": "“We believe in two things: the pursuit of quality in everything we do, and looking after one another. Everything else should take care of itself.”"
+        "color_scheme": "chantilly"
       }
     },
     "d380dd54-2b76-465a-b1aa-5ef2b5852635": {
@@ -274,10 +284,10 @@
   "order": [
     "d1f2c8d2-f0e4-4dec-825e-58a839f84439",
     "rich_text",
+    "63b74c96-4429-47d4-a5ec-ae2193bb8aac",
     "featured_collection",
     "video",
     "848b73d1-1414-43ba-91b9-af7e66b56f3e",
-    "63b74c96-4429-47d4-a5ec-ae2193bb8aac",
     "73a736c5-028f-48a6-a0fa-7cf604e8b843",
     "1bbd15b0-c304-4a46-aa37-d5f4eb03b361",
     "8b02218b-2f84-4719-924f-ab8540180e44",

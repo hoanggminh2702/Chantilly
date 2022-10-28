@@ -1,14 +1,77 @@
 {% style %}
   .about-us-container {
-    max-width: 720px;
+    max-width: 800px;
     width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
     margin: auto;
+  }
+
+  @media(max-width: 767px) {
+    .about-us-container {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  .about-img-container {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .about-img-container > img {
+    width: 100%;
+  }
+
+  .about-us-container .title.center {
+    text-align: center;
+  }
+
+  .about-us-container .title.left {
+    text-align: left;
+  }
+
+  .about-us-container .title.right {
+    text-align: right;
+  }
+
+  .about-us-container .story-paragraph-container.center * {
+    text-align: center;
+  }
+
+  .about-us-container .story-paragraph-container.left * {
+    text-align: left;
+  }
+
+  .about-us-container .story-paragraph-container.right * {
+    text-align: right;
   }
 {% endstyle %}
 <div class="about-us-container">
-  <h1 class="title">{{section.settings.title}}</h1>
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'title' %}
+        <h1 class="title {{block.settings.title_alignment}}">{{block.settings.title}}</h1>
+      {% when 'image' %}
+        {% if block.settings.title_img != blank %}
+          <div class="about-img-container">
+            <img src="{{block.settings.title_img | img_url: 'master'}}" alt="">
+          </div>
 
-  <img src="{{section.settings.title_img}}" alt="">
+
+        {% endif %}
+      {% when 'story_paragraph' %}
+        {% if block.settings.story != blank %}
+          <div class="story-paragraph-container {{block.settings.paragraph_alignment}}">{{block.settings.story}}</div>
+
+
+        {% endif %}
+    {% endcase %}
+
+  {% endfor %}
+
+
+
   <div class="about-us-story">
     {{section.settings.story}}
   </div>
@@ -18,22 +81,76 @@
   {
     "name": "About Us",
     "class": "about-us",
-    "settings": [
+    "blocks": [
       {
-        "id": "title",
-        "type": "text",
-        "label": "Title",
-        "default": "About us"
+        "type": "title",
+        "name": "Title",
+        "settings": [
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Page title",
+            "default": "About Us"
+          }, {
+            "id": "title_alignment",
+            "type": "select",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              }, {
+                "value": "center",
+                "label": "Center"
+              }, {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "left",
+            "label": "Title Alignment"
+          }
+        ]
       }, {
-        "id": "title_img",
-        "type": "image_picker",
-        "label": "Title Image"
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "id": "title_img",
+            "type": "image_picker",
+            "label": "Title Image"
+          }
+        ]
       }, {
-        "id": "story",
-        "type": "richtext",
-        "label": "Story About us",
-        "default": "<p></p>"
+        "type": "story_paragraph",
+        "name": "Story Paragraph",
+        "settings": [
+          {
+            "id": "story",
+            "type": "richtext",
+            "label": "Story About us",
+            "default": "<p></p>"
+          }, {
+            "id": "paragraph_alignment",
+            "type": "select",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              }, {
+                "value": "center",
+                "label": "Center"
+              }, {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "left",
+            "label": "Paragraph Alignment"
+          }
+        ]
       }
     ]
+
+
   }
 {% endschema %}

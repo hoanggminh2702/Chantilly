@@ -44,6 +44,63 @@
         "btn_align": "center"
       }
     },
+    "cb6df7ce-b4bc-4a3a-ae31-6e83c9a676ec": {
+      "type": "image-with-text",
+      "blocks": {
+        "eebf6627-94f5-45e5-975a-bac2f2b09dce": {
+          "type": "caption",
+          "settings": {
+            "caption": "BESTSWIMWEAR",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "template--15708114157751__cb6df7ce-b4bc-4a3a-ae31-6e83c9a676ec-16668379170fada85e-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "We have your best",
+            "heading_size": "h1"
+          }
+        },
+        "template--15708114157751__cb6df7ce-b4bc-4a3a-ae31-6e83c9a676ec-16668379170fada85e-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your one stop shop for swimwear. We feature: Supportive bra sized swim separates in sizes D Cup to H Cup. Flattering one pieces. Dare to bare ultra cheeky cuts. Sustainable and eco-conscious suits. Bold prints, fresh colors, and luxe textures, We have your best.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--15708114157751__cb6df7ce-b4bc-4a3a-ae31-6e83c9a676ec-16668379170fada85e-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "",
+            "btn_type": "dark"
+          }
+        }
+      },
+      "block_order": [
+        "eebf6627-94f5-45e5-975a-bac2f2b09dce",
+        "template--15708114157751__cb6df7ce-b4bc-4a3a-ae31-6e83c9a676ec-16668379170fada85e-0",
+        "template--15708114157751__cb6df7ce-b4bc-4a3a-ae31-6e83c9a676ec-16668379170fada85e-1",
+        "template--15708114157751__cb6df7ce-b4bc-4a3a-ae31-6e83c9a676ec-16668379170fada85e-2"
+      ],
+      "settings": {
+        "media_type": "video",
+        "image": "shopify:\/\/shop_images\/fashion-portrait.jpg",
+        "video_link": "",
+        "video_picker": "shopify:\/\/files\/videos\/pexels-taryn-elliott-6051511.mp4",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "chantilly",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "987c7a59-0841-4861-a54b-4c91c79279ff": {
       "type": "quote-and-image",
       "settings": {
@@ -86,6 +143,7 @@
   "order": [
     "c15b8994-542f-42e2-af4c-f4fd3d6854de",
     "d9522ffb-ea20-43f7-9832-259adddd351b",
+    "cb6df7ce-b4bc-4a3a-ae31-6e83c9a676ec",
     "987c7a59-0841-4861-a54b-4c91c79279ff",
     "08e64ff3-7206-46c4-b59d-917139b26a02"
   ]

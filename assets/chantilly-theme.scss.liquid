@@ -2,4 +2,50 @@
   .card {
     border: none;
   }
+
+  .chantilly-anchor-all {
+    a {
+      color: var(--anchor-text-color);
+    }
+  }
+
+  .chantilly-button {
+    background: var(--btn-bg);
+    color: var(--btn-color);
+    opacity: var(--btn-opacity);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--btn-border);
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    border-radius: 4px;
+    transition: background-color 0.1s linear;
+
+    &:hover {
+      background: var(--btn-hover-bg);
+      color: var(--btn-hover-color);
+      border-color: var(--btn-hover-border);
+    }
+  }
+
+  .field {
+    &::after,
+    &::before {
+      display: none !important;
+    }
+  }
+
+  .chantilly-input {
+    border-width: 1.5px !important;
+    border-style: solid !important;
+    border-color: var(--input-border-color) !important;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    &:hover {
+      border-color: var(--input-hover-border-color) !important;
+    }
+
+    &:focus {
+      border-color: var(--input-focus-border-color) !important;
+    }
+  }
 }

@@ -1,0 +1,175 @@
+{{'chantilly-collapse.scss.css' | asset_url | stylesheet_tag}}
+{{"chantilly-faq.scss.css" | asset_url | stylesheet_tag}}
+
+<div class="faq-container chantilly-anchor-text chantilly-anchor-all">
+  <div class="row gx-md-5">
+    {% if section.settings.show_anchor_col %}
+      <div class="anchor-col col col-3">
+        <div class="anchor-container">
+          <h3 class="anchor-column-title">{{section.settings.anchor_column_title}}</h3>
+          <ul class="anchor-list">
+            {% for block in section.blocks %}
+              {% if block.type == 'topic_cluster' %}
+                <li class="anchor-item">
+                  <a href="#{{block.settings.topic_id}}" class="anchor-link">{{block.settings.topic_title}}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="col col-12 {% if section.settings.show_anchor_col %}col-md-9{% endif %}">
+      <div class="right-side-container">
+        <div class="right-side-heading">
+          <h1 class="page-title">
+            FAQ
+          </h1>
+          <span class="page-subtitle">
+            We might have already read your mind. Use the search to find what you are looking for.
+          </span>
+        </div>
+
+        <div id="search-faqs" class="search-faqs input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">
+            <svg width="1em" height="1em" class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+              <use href="#icon-search"/>
+            </svg>
+          </span>
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="topic-container">
+          {% for block in section.blocks %}
+            {% if block.type == 'topic_cluster' %}
+              {% assign haveQuestion = false %}
+              {% for blockQuestion in section.blocks %}
+                {% if blockQuestion.type ==  'question_cluster' %}
+                  {% if blockQuestion.settings.topic_id == block.settings.topic_id %}
+                    {% assign haveQuestion = true %}
+                    {% break %}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+
+
+              {% if haveQuestion %}
+
+                <div id="{{block.settings.topic_id}}" class="topic-q-a-container">
+                  <div class="topic-heading">
+                    <h2 class="topic-title">{{block.settings.topic_title}}</h2>
+                    {% if block.settings.topic_subtitle != blank %}
+                      <span class="topic-subtitle">{{block.settings.topic_subtitle}}</span>
+                    {% endif %}
+                  </div>
+                  {% assign collapse_order = 0 %}
+                  {% for blockQ in section.blocks %}
+                    {% if blockQ.type == 'question_cluster' %}
+                      {% if blockQ.settings.topic_id == block.settings.topic_id %}
+                        {% capture collapse_id %}
+                          {{blockQ.settings.topic_id}}-{{collapse_order}}{% endcapture %}
+                        {% render 'chantilly-collapse' with collapse_content_id:  collapse_id, collapse_title: blockQ.settings.question, collapse_content: blockQ.settings.answer %}
+                        {% assign collapse_order = collapse_order  | plus: 1 %}
+
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                  {% if block.settings.additional_btn %}
+                    <div class="btn-container">
+                      <a href="{% if block.settings.btn_link != blank %}{{block.settings.btn_link}}{% else %}#{% endif %}" class="additional-btn chantilly-button button-dark">
+                        {{block.settings.btn_text}}
+                      </a>
+                    </div>
+                  {% endif %}
+
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "FAQs",
+    "settings": [
+      {
+        "id": "anchor_column_title",
+        "type": "text",
+        "default": "Anchor Column Title",
+        "label": "Anchor Column Title"
+      }, {
+        "id": "show_anchor_col",
+        "type": "checkbox",
+        "default": true,
+        "label": "Show Anchor Column On Desktop"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "topic_cluster",
+        "name": "Topic",
+        "settings": [
+          {
+            "id": "topic_title",
+            "type": "text",
+            "default": "Topic Title",
+            "label": "Topic Title"
+          },
+          {
+            "id": "topic_subtitle",
+            "type": "text",
+            "label": "Topic Subtitle"
+          },
+          {
+            "id": "topic_id",
+            "type": "text",
+            "default": "Topic Id",
+            "label": "Topic Id"
+          },
+          {
+            "id": "additional_btn",
+            "type": "checkbox",
+            "default": false,
+            "label": "Is additional button?"
+          }, {
+            "id": "btn_text",
+            "type": "text",
+            "default": "Button Text",
+            "label": "Button Text"
+          }, {
+            "id": "btn_link",
+            "type": "url",
+            "label": "Button Link"
+          }
+        ]
+      }, {
+        "type": "question_cluster",
+        "name": "Question",
+        "settings": [
+          {
+            "id": "topic_id",
+            "type": "text",
+            "default": "Topic Id",
+            "label": "Topic Id"
+          }, {
+            "id": "question",
+            "type": "text",
+            "default": "Question",
+            "label": "Question"
+          }, {
+            "id": "answer",
+            "type": "richtext",
+            "default": "<p></p>",
+            "label": "Answer"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{{'handleSearchFaqs.js' | asset_url | script_tag}}

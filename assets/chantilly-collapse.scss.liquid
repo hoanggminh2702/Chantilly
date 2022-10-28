@@ -1,0 +1,33 @@
+.collapse-container {
+  padding: 1rem 0rem 1.5rem;
+  border-bottom: 1px solid var(--input-border-color);
+  a.collapse-trigger {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+
+    font-size: 2rem;
+
+    position: relative;
+
+    &::before {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      right: 1%;
+      transform: translateY(-50%) scale(1.2);
+      transition: content 0.1s linear;
+    }
+
+    &[aria-expanded="true"] {
+      &::before {
+        content: "-";
+      }
+    }
+  }
+  .collapse-content {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+  }
+}

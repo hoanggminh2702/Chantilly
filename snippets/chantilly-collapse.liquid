@@ -1,0 +1,22 @@
+{% assign id = collapse_content_id | escapse | strip_html | strip %}
+
+<div class="collapse-container chantilly-input-primary">
+  <a class="collapse-trigger chantilly-text" data-bs-toggle="collapse" href="#{{id}}" role="button" aria-expanded="false" aria-controls="#{{id}}">
+    {% if collapse_title != blank %}
+      {{collapse_title | escape}}
+    {% else %}
+      Collapse Title
+    {% endif %}
+  </a>
+
+  <div class="collapse" id="{{id}}">
+    <div class="collapse-content">
+      {% if collapse_content != blank %}
+        {{collapse_content}}
+      {% else %}
+        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+
+      {% endif %}
+    </div>
+  </div>
+</div>

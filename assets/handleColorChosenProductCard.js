@@ -80,21 +80,6 @@ Array.from(document.querySelectorAll(".product-colors")).forEach(
   }
 );
 
-// Array.from(document.querySelectorAll(".change-img-btn")).forEach((btn) => {
-//   const productId = btn.getAttribute("data-product-btn");
-
-//   const imgs = document.querySelectorAll(
-//     `[data-product-container="${productId}"] > product.img`
-//   );
-
-//   btn.addEventListener("click", (e) => {
-//     console.log("Trigger");
-//     e.stopPropagation();
-//     if (e.target.classList.contains("next")) {
-//     } else if (e.target.classList.contains("next")) {
-//     }
-//   });
-// });
 
 Array.from(document.querySelectorAll(".product-image-container")).forEach(
   (container) => {

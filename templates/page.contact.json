@@ -1,25 +1,61 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "dffbd45f-8319-480e-a4bd-8b767d3e410c": {
+      "type": "image-banner",
+      "blocks": {
+        "template--15702454010039__dffbd45f-8319-480e-a4bd-8b767d3e410c-1666882669ad784ccd-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Contact us",
+            "caption": "CUSTOMER HAPPINESS TEAM",
+            "set_page_title": true,
+            "heading_size": "h0"
+          }
+        },
+        "template--15702454010039__dffbd45f-8319-480e-a4bd-8b767d3e410c-1666882669ad784ccd-1": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "set_page_content": true,
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--15702454010039__dffbd45f-8319-480e-a4bd-8b767d3e410c-1666882669ad784ccd-0",
+        "template--15702454010039__dffbd45f-8319-480e-a4bd-8b767d3e410c-1666882669ad784ccd-1"
+      ],
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image": "shopify:\/\/shop_images\/background.jpg",
+        "image_overlay_opacity": 30,
+        "image_height": "large",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "",
+        "chantilly_contact_layout": true,
+        "heading": "Contact us",
+        "left_heading": "Support",
+        "contact_info": "<p>Mon-Fri 9:00am – 5:00pm PST<br\/>*Excludes Holidays<br\/><br\/>Looking for more info on products, shipping, fabric, and more?<br\/><a href=\"https:\/\/chantilly.myshopify.com\/pages\/customer-help\" title=\"FAQs\">View FAQs<\/a><\/p>",
+        "subtitle": "Drop your details below and we'll get back to you within a day.",
         "heading_size": "h1",
         "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
-    "main",
+    "dffbd45f-8319-480e-a4bd-8b767d3e410c",
     "form"
   ]
 }

@@ -1,8 +1,39 @@
 {
-    "sections": {
-        "template": {
-            "type": "about-us"
+  "sections": {
+    "template": {
+      "type": "about-us",
+      "blocks": {
+        "8df45660-8d4d-4ad9-a8c9-e2e39b97a875": {
+          "type": "title",
+          "settings": {
+            "title": "About Us",
+            "title_alignment": "center"
+          }
+        },
+        "7e47850b-1ba1-43e9-8e0a-28a5d1d35693": {
+          "type": "image",
+          "settings": {
+            "title_img": "shopify:\/\/shop_images\/fashion-portrait.jpg"
+          }
+        },
+        "b372b22d-8f14-4f14-99ad-19bf4750adfd": {
+          "type": "story_paragraph",
+          "settings": {
+            "story": "<p>Selling gorgeous bikinis all day, every day. Bestswimwear is your one stop shop for 2021 swimwear. We feature: Supportive bra sized swim separates in sizes D Cup to H Cup. Flattering one pieces. Dare to bare ultra cheeky cuts. Sustainable and eco-conscious suits. Bold prints, fresh colors, and luxe textures, We have your best.<\/p><p>This is a<strong> DEMONSTRATION STORE <\/strong>for <a href=\"http:\/\/shopify.com\/?ref=cleancanvas\" target=\"_blank\"><strong>Shopify<\/strong><\/a><\/p><p>You can <strong>try this Shopify theme for free <\/strong><a href=\"https:\/\/themes.shopify.com\/themes\/symmetry\/styles\/chantilly?ref=cleancanvas\" target=\"_blank\" title=\"Link to Chantilly premium Shopify theme\"><strong>by clicking here<\/strong><\/a><\/p><p>Product and lifestyle photography kindly donated by <strong>Best Swimwear<\/strong>. If you like the products featured in this store as much as we do, you can buy them over at: <a href=\"https:\/\/www.bestswimwear.com\/\" target=\"_blank\" title=\"Best Swimwear\">bestswimwear.co.uk<\/a><\/p>",
+            "paragraph_alignment": "left"
+          }
         }
-    },
-    "order": ["template"]
+      },
+      "block_order": [
+        "8df45660-8d4d-4ad9-a8c9-e2e39b97a875",
+        "7e47850b-1ba1-43e9-8e0a-28a5d1d35693",
+        "b372b22d-8f14-4f14-99ad-19bf4750adfd"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "template"
+  ]
 }

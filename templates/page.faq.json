@@ -1,0 +1,175 @@
+{
+  "sections": {
+    "template": {
+      "type": "image-banner",
+      "blocks": {
+        "455cda76-718f-48ce-af23-3bfe35b64319": {
+          "type": "heading",
+          "settings": {
+            "heading": "Customer Help",
+            "caption": "",
+            "set_page_title": false,
+            "heading_size": "h0"
+          }
+        },
+        "99c5f66c-11f6-48d5-ad01-faae1ac629ae": {
+          "type": "text",
+          "settings": {
+            "text": "If talking to a real-life human is more your thing, you can reach our Customer Happiness Team via email (below).",
+            "set_page_content": true,
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "455cda76-718f-48ce-af23-3bfe35b64319",
+        "99c5f66c-11f6-48d5-ad01-faae1ac629ae"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
+        "image_overlay_opacity": 10,
+        "image_height": "medium",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "content": {
+      "type": "faq-content",
+      "blocks": {
+        "9d450c19-d488-4f82-b508-6f9dcb436db2": {
+          "type": "topic_cluster",
+          "settings": {
+            "topic_title": "Ordering",
+            "topic_subtitle": "",
+            "topic_id": "ordering",
+            "additional_btn": false,
+            "btn_text": "Button Text",
+            "btn_link": ""
+          }
+        },
+        "05bf779d-4ee9-4d5b-9494-fd88e0f445af": {
+          "type": "topic_cluster",
+          "settings": {
+            "topic_title": "Shipping",
+            "topic_subtitle": "We use all major carriers, and local courier partners. You’ll be asked to select a delivery method during checkout.",
+            "topic_id": "shipping",
+            "additional_btn": false,
+            "btn_text": "Button Text",
+            "btn_link": ""
+          }
+        },
+        "3835d34d-9717-45a1-9591-5a0ce9531262": {
+          "type": "topic_cluster",
+          "settings": {
+            "topic_title": "Returns & Exchanges",
+            "topic_subtitle": "",
+            "topic_id": "return-exchange",
+            "additional_btn": true,
+            "btn_text": "Start a return",
+            "btn_link": "shopify:\/\/pages\/contact-us"
+          }
+        },
+        "79657a1d-76f0-4fc8-8b41-d89e8acd72d1": {
+          "type": "question_cluster",
+          "settings": {
+            "topic_id": "ordering",
+            "question": "What size should I buy?",
+            "answer": "<p>If you’re not quite sure which size is right for you, refer to our size guides. They're located underneath the available sizes for each of our products. For any additional questions, contact us. We will ask your typical size and how you like to wear your tops, shorts, and pants so we can suggest the best size for you!<\/p>"
+          }
+        },
+        "fd52e27e-eaff-4f89-863e-a1aa3644a6f8": {
+          "type": "question_cluster",
+          "settings": {
+            "topic_id": "ordering",
+            "question": "Can I cancel my order?",
+            "answer": "<p>We completely get it, we change our minds too! While we wish could, once an order is placed, we are unable to alter or cancel it at this time. We hope to have a cancellation window one day in the future.<\/p>"
+          }
+        },
+        "e9b06c6c-cb63-41aa-b947-861b65b5e145": {
+          "type": "question_cluster",
+          "settings": {
+            "topic_id": "ordering",
+            "question": "What if I want to speak to someone?",
+            "answer": "<p>We want to speak to you too!<a href=\"https:\/\/chantilly.myshopify.com\/pages\/contact\" title=\"Contact Us\">Contact us<\/a>with any questions, concerns, or feedback. We will be sure to get back to you within 48 hours. However, please note that inquiries sent on Fridays will receive a reply the following Monday, but possibly sooner.<\/p>"
+          }
+        },
+        "026d2799-5162-4b3b-883e-ac325180d9dd": {
+          "type": "question_cluster",
+          "settings": {
+            "topic_id": "shipping",
+            "question": "What is the shipping policy?",
+            "answer": "<p>Once your order is placed, you will receive a confirmation email letting you know that our fulfillment team has received your order. Once your order is fulfilled, you will receive an email notification with your tracking information. Shipping fees are non-refundable in the case of returns.<br\/><br\/>For information about International shipping <a href=\"https:\/\/chantilly.myshopify.com\/pages\/contact-us\" title=\"Contact Us\">click here<\/a><\/p>"
+          }
+        },
+        "e11d0132-3744-4469-af28-8a81389aa687": {
+          "type": "question_cluster",
+          "settings": {
+            "topic_id": "shipping",
+            "question": "What shipping providers do you use?",
+            "answer": "<p>We use FedEx for all U.S. orders. Ground shipping for U.S. orders may take up to 5-9 business days to arrive from the day you receive your shipping confirmation.<\/p>"
+          }
+        },
+        "f05a490c-c3da-417b-9342-2d399892af5e": {
+          "type": "question_cluster",
+          "settings": {
+            "topic_id": "shipping",
+            "question": "Eff! My package was lost, stolen, or damaged!",
+            "answer": "<p>Oh no! Please file a claim with the shipping carrier first, then <a href=\"https:\/\/chantilly.myshopify.com\/pages\/contact-us\" title=\"Contact Us\">contact us <\/a>letting us know your order number and your specific claim number. Once we receive that, we will work together to come to the best resolution.<\/p>"
+          }
+        },
+        "ca9de84c-7ebd-4d99-b279-de79166529ec": {
+          "type": "question_cluster",
+          "settings": {
+            "topic_id": "return-exchange",
+            "question": "How do I return an item?",
+            "answer": "<p>We want you to be completely satisfied with your purchase. Not the perfect fit? Just let us know—we’re happy to help! We offer free shipping on all U.S. returns.<br\/><\/p>"
+          }
+        },
+        "94969910-4ff9-497e-ac41-a030fd878ec5": {
+          "type": "question_cluster",
+          "settings": {
+            "topic_id": "return-exchange",
+            "question": "What's the return policy",
+            "answer": "<p>A return must be requested 30 days of the ship date, after which merchandise must be sent back within 15 days. Merchandise must not be worn, washed, dyed, or altered. Merchandise must be returned in its original packaging. Returns must include the packing slip supplied during return process (packing slip will auto-generate along with the return label). Package should only include items listed in that particular return packing slip. Merchandise that appears to be worn and\/or washed and not in its original\/sellable condition may result in a delayed refund\/exchange, or may not qualify for a refund or exchange. In these cases, the item(s) will be returned to you. Certain items are marked as not refundable and are not eligible for returns (ie. gift cards, gifts with purchase). Sets and Kits are not eligible for partial exchange or return.<\/p>"
+          }
+        },
+        "7f0d4f85-4d17-4818-b120-54e4739c5ced": {
+          "type": "question_cluster",
+          "settings": {
+            "topic_id": "return-exchange",
+            "question": "I am expecting a refund. How long does this take?",
+            "answer": "<p>Please allow 6-12 business days for us to receive your order. Heads up—it may take up to 10 business days for us to process your return. Once your items have undergone (and passed!) inspection, we will issue your refund to the original form of payment and will notify you of your refund via email. After your refund has been issued by us, please allow 2 additional business days for those funds to be posted to your account. Please note that your refund may only be credited to your original method of payment.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "9d450c19-d488-4f82-b508-6f9dcb436db2",
+        "05bf779d-4ee9-4d5b-9494-fd88e0f445af",
+        "3835d34d-9717-45a1-9591-5a0ce9531262",
+        "79657a1d-76f0-4fc8-8b41-d89e8acd72d1",
+        "fd52e27e-eaff-4f89-863e-a1aa3644a6f8",
+        "e9b06c6c-cb63-41aa-b947-861b65b5e145",
+        "026d2799-5162-4b3b-883e-ac325180d9dd",
+        "e11d0132-3744-4469-af28-8a81389aa687",
+        "f05a490c-c3da-417b-9342-2d399892af5e",
+        "ca9de84c-7ebd-4d99-b279-de79166529ec",
+        "94969910-4ff9-497e-ac41-a030fd878ec5",
+        "7f0d4f85-4d17-4818-b120-54e4739c5ced"
+      ],
+      "settings": {
+        "anchor_column_title": "How can we help?",
+        "show_anchor_col": true
+      }
+    }
+  },
+  "order": [
+    "template",
+    "content"
+  ]
+}
