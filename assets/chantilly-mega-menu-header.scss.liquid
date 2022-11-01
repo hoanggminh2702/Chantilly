@@ -1,0 +1,27 @@
+.single-collection-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+
+  &.have-img {
+    align-items: center;
+  }
+
+  .single-collection-img-container {
+    width: 100%;
+    padding-bottom: 62.5%;
+    position: relative;
+  }
+
+  .single-collection-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+}

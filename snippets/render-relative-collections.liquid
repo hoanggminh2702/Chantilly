@@ -1,40 +1,47 @@
-{% for link in link.links %}
-  {% if link.child_current or link.handle == collection.handle %}
-    <div class="container">
-      <div class="relative-collections-container row gx-4 gx-md-5 gy-4 gy-md-0">
-        {% if link.handle == collection.handle %}
-          {% for linkChild in link.links limit: 4 %}
-            {% if collection.handle != linkChild.handle %}
-              {% for collectionn in collections %}
-                {% if collectionn.handle == linkChild.handle %}
-                  <div class="col col-6 col-md-3">
-                    {% render 'render-relative-collection', with renderedCollection : collectionn %}
-                  </div>
-
-                {% endif %}
-              {% endfor %}
+{%- comment -%}
+  Renders a list relative collection
+  Accepts:
+  - links: {Array} link of list navigation
+  - isRenderedList: {Boolean}
+  - isChildrenListLink: {Boolean}
+{%- endcomment -%}
+{% if isRenderedList %}
+  <div class="relative-collections-container row gx-4 gx-md-5 gy-4 gy-md-0">
+    {% for link in links limit: 4 %}
+      {% if isChildrenListLink %}
+        {% for renderCollection in collections %}
+          {% if renderCollection.handle == link.handle %}
+            <div class="col col-6 col-md-3">
+              {% render 'render-relative-collection', with renderedCollection : renderCollection %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% if link.handle != collection.handle %}
+          {% for renderCollection in collections %}
+            {% if renderCollection.handle == link.handle %}
+              <div class="col col-6 col-md-3">
+                {% render 'render-relative-collection', with renderedCollection : renderCollection %}
+              </div>
             {% endif %}
           {% endfor %}
-        {% else %}
-          {% for linkChild in link.links %}
-            {% if collection.handle != linkChild.handle %}
-              {% for collectionn in collections %}
-                {% if collectionn.handle == linkChild.handle %}
-                  <div class="col col-6 col-md-4 col-lg-3">
-                    {% render 'render-relative-collection', with renderedCollection : collectionn %}
-                  </div>
-
-                {% endif %}
-              {% endfor %}
-            {% endif %}
-          {% endfor %}
-
         {% endif %}
-      </div>
-    </div>
-    {% break %}
-  {% endif %}
-  {% render 'render-relative-collections', with link: link %}
-  {% else %}
+      {% endif %}
+    {% endfor %}
+  </div>
 
-{% endfor %}
+{% else %}
+  {% for link in links %}
+    {% if link.handle == collection.handle %}
+      {% if link.links.size != 0 %}
+        {% render 'render-relative-collections', links: link.links, isRenderedList: true, isChildrenListLink: true %}
+      {% else %}
+        {% render 'render-relative-collections', links: links, isRenderedList: true, isChildrenListLink: false %}
+      {% endif %}
+      {% break %}
+    {% elsif link.child_current %}
+      {% render 'render-relative-collections', links: link.links%}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}

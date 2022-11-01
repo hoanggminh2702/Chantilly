@@ -1,6 +1,4 @@
-{% for link in linklists['header-menu'].links %}
-  {% render 'render-relative-collections', with link: link %}
-{% endfor %}
+{% render 'render-relative-collections', with links: linklists['header-menu'].links %}
 {% schema %}
   {
     "name": "Relative Collection",

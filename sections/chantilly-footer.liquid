@@ -1,0 +1,91 @@
+{{'chantilly-footer.scss.css' | asset_url | stylesheet_tag}}
+<div class="footer-container">
+  <div class="main-footer container-fluid border-b-[1px] border-solid border-[#ecd6d1]">
+    <div class="row link-and-description-row justify-between gap-y-12 pt-[3.75rem] pb-[5rem] px-7">
+      <div class="footer-description col col-12 col-md-6 col-lg-auto">
+        <p>Best Swimwear is a bikini boutique, in sunny Hermosa Beach, California.</p>
+        <p>They designed the store with the female in mind. A warm environment where instead of feeling self-conscious she feels secure in her own body, not limited by age, size or shape, wearing swimwear that fits and feels good.</p>
+        <div class="img-wrapper w-[150px]">
+          <img class="w-full" src="https://cdn.shopify.com/s/files/1/0238/8505/files/chantilly-logo-new_300x.png?v=1618930190" alt="">
+
+        </div>
+      </div>
+      <div class="link-list col col-12 col-md-6 col-lg-auto">
+        <h6 class="chantilly-footer-title">About</h6>
+        <ul class="link-list-items">
+          <li>Our blog</li>
+          <li>About us</li>
+          <li>Contact us</li>
+          <li>FAQs</li>
+          <li>Search</li>
+        </ul>
+      </div>
+      <div class="link-list col col-12 col-md-6 col-lg-auto">
+        <h6 class="chantilly-footer-title">Shop</h6>
+        <ul class="link-list-items">
+          <li>Swim Tops</li>
+          <li>Swim Bottoms</li>
+          <li>One Pieces</li>
+          <li>Cover-ups</li>
+        </ul>
+      </div>
+      <div class="email-subscriber col col-12 col-md-6 col-lg-auto">
+        <h6 class="chantilly-footer-title">Join our email list!</h6>
+        <p>Get 15% off your first purchase! Plus, be the first to know about sales, new product launches and exclusive offers!</p>
+
+        <form action="" method="post" class="subscribe-email-form">
+          <input type="email" class="form-control mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+          <button type="submit" class="chantilly-button button-dark">Sign up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-footer-container container-fluid footer-bg-color">
+    <div class="bottom-footer flex flex-col-reverse gap-4 md:flex-row justify-between px-8 py-[3.75rem]">
+      <div class="left-bottom-footer-side">
+        <select class="form-select mb-3 w-fit">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <span class="text-[0.775rem]">© 2022 CHANTILLY. Website template by Shopify</span>
+      </div>
+      <div class="right-bottom-footer-side flex flex-col gap-y-6">
+        {% render 'payment-list-icon' %}
+        <div class="policy-and-term flex justify-start md:justify-end gap-4">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "class": "footer-section",
+    "settings": [
+      {
+        "id": "upper_footer_bar_bg-color",
+        "type": "color",
+        "label": "Upper Footer Bar Background Color",
+        "default": "#f7f1f0"
+
+      }, {
+        "id": "main_footer_bg_color",
+        "type": "color",
+        "label": "Main Footer Color",
+        "default": "#f4dfdb"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Layout Footer",
+        "category": "Layout Section"
+      }
+    ]
+  }
+{% endschema %}

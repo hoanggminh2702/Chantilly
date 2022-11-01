@@ -1,7 +1,7 @@
 /* Button */
 .chantilly .chantilly-button {
-  --btn-padding-x: 3rem;
-  --btn-padding-y: 1.5rem;
+  --btn-padding-x: calc(1rem * 25 / 15);
+  --btn-padding-y: calc(1rem * 15.6 / 15);
 }
 
 .chantilly .chantilly-button.button-dark {
@@ -29,7 +29,6 @@
   --input-border-color: #dbdcdc;
   --input-hover-border-color: #b0b1b2;
   --input-focus-border-color: #b0b1b2;
-
 }
 
 /* Text */

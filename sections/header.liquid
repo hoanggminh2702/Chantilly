@@ -121,7 +121,7 @@
     }
   }
 {%- endstyle -%}
-
+{{'chantilly-mega-menu-header.scss.css' | asset_url | stylesheet_tag}}
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
@@ -451,13 +451,29 @@
                         {% render 'icon-caret' %}
                       </summary>
                       <div id="MegaMenu-Content-{{ forloop.index }}" class="mega-menu__content gradient motion-reduce global-settings-popup" tabindex="-1">
-                        <ul class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}" role="list">
+                        {% assign menu_type_class = nil %}
+                        {% if link.levels == 1 %} {% assign menu_type_class = 'mega-menu__list--condensed' %}{% endif %}
+                        {% for customTopLevelMenuBlock in section.blocks %}
+                           {% if customTopLevelMenuBlock.type == "top_level_menu_custom" %}
+                            {% if customTopLevelMenuBlock.settings.top_level_menu_id == link.handle %}
+                                {% case customTopLevelMenuBlock.settings.top_level_menu_type %}
+                                  {% when 'wide_mega_menu' %}
+                                      {% assign menu_type_class = customTopLevelMenuBlock.settings.top_level_menu_type %}
+                                  {% when 'not_condensered_menu' %}
+                                      {% assign menu_type_class = nil %}
+                                {% endcase %}
+                                {% break %}
+                            {% endif %}
+                           {% endif %}
+
+                        {% endfor %}
+                        <ul class="mega-menu__list page-width {{menu_type_class}}" role="list">
                           {%- for childlink in link.links -%}
                             <li>
-                              <a href="{{ childlink.url }}" class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
-                                {{ childlink.title | escape }}
-                              </a>
                               {%- if childlink.links != blank -%}
+                                <a href="{{ childlink.url }}" class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                  {{ childlink.title | escape }}
+                                </a>
                                 <ul class="list-unstyled" role="list">
                                   {%- for grandchildlink in childlink.links -%}
                                     <li>
@@ -467,6 +483,38 @@
                                     </li>
                                   {%- endfor -%}
                                 </ul>
+
+                              {%- else -%}
+                                {% assign foundCustomSingleBlock = nil %}
+                                {% for customMenuBlock in section.blocks %}
+                                  {% if customMenuBlock.type == "single_collection" %}
+                                    {% if customMenuBlock.settings.collection_id == childlink.handle %}
+                                        {% assign foundCustomSingleBlock = customMenuBlock %}
+                                        {% break %}
+                                    {% else %}
+                                      {% continue %}
+                                    {% endif %}
+                                  {% endif %}
+                                {% endfor %}
+
+                                {% if foundCustomSingleBlock %}
+                                  <a href="{{ childlink.url }}" class="mega-menu__link mega-menu__link--level-2 link single-collection-container {% if foundCustomSingleBlock.settings.collection_img %}have-img{%endif%}">
+                                    {% if foundCustomSingleBlock.settings.collection_img %}
+                                      <div class="single-collection-img-container">
+                                        <img src="{{foundCustomSingleBlock.settings.collection_img |img_url: 'medium'}}" alt="" class="single-collection-img">
+                                      </div>
+                                    {% endif %}
+                                      {% if foundCustomSingleBlock.settings.collection_title != blank %}
+                                        {{foundCustomSingleBlock.settings.collection_title | escape}}
+                                      {% else %}
+                                          {{ childlink.title | escape }}
+                                      {% endif %}
+                                  </a>
+                                {% else %}
+                                   <a href="{{ childlink.url }}" class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                    {{ childlink.title | escape }}
+                                  </a>
+                                {% endif %}
                               {%- endif -%}
                             </li>
                           {%- endfor -%}
@@ -929,6 +977,66 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "top_level_menu_custom",
+      "name": "Top Level Menu Custom",
+      "settings": [
+        {
+          "id": "top_level_menu_id",
+          "type": "text",
+          "label": "Top Level Menu Id"
+        },
+        {
+          "id": "top_level_menu_type",
+          "type": "select",
+          "label": "Top Level Menu Type",
+          "options": [
+            {
+              "value": "wide_mega_menu",
+              "label": "Widemega Menu"
+            },
+            {
+              "value": "not_condensered_menu",
+              "label": "Not Condensered Menu"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "single_collection",
+      "name": "Single Collection",
+      "settings": [
+        {
+          "id": "collection_id",
+          "type": "text",
+          "label": "Collection ID"
+        },
+        {
+          "id": "collection_img",
+          "type": "image_picker",
+          "label": "Collection Image"
+        },
+        {
+        "id": "collection_title",
+        "type": "text",
+        "label": "Collection Title"
+        }
+      ]
+    },
+    {
+      "type": "wide_mega_menu",
+      "name": "Widemega Menu",
+      "settings": [
+        {
+          "id": "menu_id",
+          "type": "text",
+          "label": "Menu ID"
+        }
+      ]
     }
   ]
 }
