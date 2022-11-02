@@ -271,6 +271,10 @@
       }
     {% endstyle %}
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     {{ 'base-chantilly.scss.css' | asset_url | stylesheet_tag }}
     {{ 'chantilly-theme-variable.css' | asset_url | stylesheet_tag}}
     {{ 'chantilly-theme.scss.css' | asset_url | stylesheet_tag}}
@@ -351,5 +355,9 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
   </body>
 </html>

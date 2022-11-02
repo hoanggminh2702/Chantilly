@@ -1,0 +1,198 @@
+{{'chantilly-image-slide.scss.css' | asset_url | stylesheet_tag }}
+<div id="introduction-heading-slider" class="carousel slide carousel-fade " data-bs-ride="carousel">
+
+  <div class="carousel-inner">
+    {% assign checkActiveEle = 0 %}
+    {% for block in section.blocks %}
+      {% assign blockSettings = block.settings %}
+      <div class="carousel-item {% if checkActiveEle <= 0 %}active{% assign checkActiveEle = 1 %}{% endif %}" data-bs-interval="{{blockSettings.slide_duration}}">
+        <div class="chantilly-slide w-full mobile:h-[500px] tablet:h-[820px] relative">
+          <div class="heading-bg-container chantilly-img-ratio-container w-full h-full absolute top-0 left-0 -z-10">
+            {% assign headingBg = blockSettings.heading_bg %}
+            {% if headingBg != blank %}
+              <img src="{{headingBg | img_url: 'master'}}" alt="" class="heading-bg chantilly-img-ratio full-height w-full h-full object-cover object-center">
+            {% else %}
+              {{ 'lifestyle-2' | placeholder_svg_tag: 'heading-bg chantilly-img-ratio full-height w-full h-full object-cover object-center'}}
+            {% endif %}
+          </div>
+          <div class="chantilly-container fluid content-container flex justify-start items-end w-full h-full">
+            <div class="heading-text-container tablet:px-20 mobile:py-8 tablet:py-16 w-full">
+              <p class="heading-caption text-white uppercase mobile:text-[0.9rem] tablet:text-[1rem]">{{blockSettings.sub_heading}}
+              </p>
+              <h1 class="heading-title text-white mobile:text-[2.5rem] tablet:text-[4rem] font-bold capitalize">{{blockSettings.heading_title}}
+              </h1>
+              <p class="heading-description text-white mobile:text-[1rem] tablet:text-[1.15rem]">{{blockSettings.heading_subtitle}}
+              </p>
+
+              {% case block.type %}
+                {% when 'style_1' %}
+
+                  <div class="btn-container flex gap-4">
+                    <a href="{{blockSettings['button_link']}}" class="chantilly-button button-light light-fill uppercase mobile:text-[0.9rem] tablet:text-[0.9rem] mobile:px-3 tablet:px-4 mobile:py-2 tablet:py-3">{{blockSettings['button_label']}}
+                    </a>
+
+                  </div>
+
+                {% when 'style_2' %}
+
+                  <div class="btn-container flex gap-4">
+                    <a href="{{blockSettings['button_1_link']}}" class="chantilly-button button-light light-fill uppercase mobile:text-[0.9rem] tablet:text-[0.9rem] mobile:px-3 tablet:px-4 mobile:py-2 tablet:py-3">{{blockSettings['button_1_label']}}
+                    </a>
+                    <a href="{{blockSettings['button_2_link']}}" class="chantilly-button button-light light-fill uppercase mobile:text-[0.9rem] tablet:text-[0.9rem] mobile:px-3 tablet:px-4 mobile:py-2 tablet:py-3">{{blockSettings['button_2_label']}}
+                    </a>
+                  </div>
+
+
+                {% else %}
+                  <div class="btn-container flex gap-4">
+                    <a href="{{blockSettings['button_link']}}" class="chantilly-button button-light light-fill uppercase text-[0.9rem] px-4 py-2">{{blockSettings['button_label']}}
+                    </a>
+
+                  </div>
+              {% endcase %}
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    {% endfor %}
+  </div>
+  <button class="carousel-control-prev mobile:hidden tablet:block" type="button" data-bs-target="#introduction-heading-slider" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next mobile:hidden tablet:block" type="button" data-bs-target="#introduction-heading-slider" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+{% schema %}
+  {
+    "name": "Introduction Slider",
+    "class": "intro-slider-section",
+    "tag": "section",
+    "blocks": [
+      {
+        "type": "style_1",
+        "name": "Style 1",
+        "settings": [
+          {
+            "id": "heading_bg",
+            "label": "Heading Background",
+            "type": "image_picker"
+          },
+          {
+            "id": "sub_heading",
+            "label": "Subheading",
+            "type": "text",
+            "default": "new new new"
+
+          },
+          {
+            "id": "heading_title",
+            "label": "Heading Title",
+            "type": "text",
+            "default": "Summer Style"
+
+          },
+          {
+            "id": "heading_subtitle",
+            "label": "Heading Subtitle",
+            "type": "text",
+            "default": "Be the firest to shop the drop"
+
+          }, {
+            "id": "button_label",
+            "label": "Button 1 Label",
+            "type": "text",
+            "default": "Shop the collection"
+
+          }, {
+            "id": "button_link",
+            "label": "Button 1 Link",
+            "type": "url"
+          }, {
+            "id": "slide_duration",
+            "type": "range",
+            "min": 2000,
+            "max": 8000,
+            "step": 500,
+            "unit": "ms",
+            "label": "Slide Duration Time",
+            "default": 6000
+          }
+        ]
+      }, {
+        "type": "style_2",
+        "name": "Style 2",
+        "settings": [
+          {
+            "id": "heading_bg",
+            "label": "Heading Background",
+            "type": "image_picker"
+          },
+          {
+            "id": "sub_heading",
+            "label": "Subheading",
+            "type": "text",
+            "default": "new new new"
+
+          },
+          {
+            "id": "heading_title",
+            "label": "Heading Title",
+            "type": "text",
+            "default": "Summer Style"
+
+          },
+          {
+            "id": "heading_subtitle",
+            "label": "Heading Subtitle",
+            "type": "text",
+            "default": "Be the firest to shop the drop"
+
+          }, {
+            "id": "button_1_label",
+            "label": "Button 1 Label",
+            "type": "text",
+            "default": "Shop tops"
+
+          }, {
+            "id": "button_1_link",
+            "label": "Button 1 Link",
+            "type": "url"
+
+          }, {
+            "id": "button_2_label",
+            "label": "Button 2 Label",
+            "type": "text",
+            "default": "Shop bottoms"
+
+          }, {
+            "id": "button_2_link",
+            "label": "Button 1 Link",
+            "type": "url"
+
+          }, {
+            "id": "slide_duration",
+            "type": "range",
+            "min": 2000,
+            "max": 8000,
+            "step": 500,
+            "unit": "ms",
+            "label": "Slide Duration Time",
+            "default": 6000
+          }
+        ]
+
+      }
+    ],
+    "presets": [
+      {
+        "category": "Slider",
+        "name": "Introduction Slider"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,83 @@
+#introduction-heading-slider {
+  .chantilly-slide {
+    width: 100%;
+    height: 500px;
+    position: relative;
+
+    .heading-bg-container {
+      z-index: -10;
+    }
+
+    .content-container {
+      display: flex;
+      justify-content: start;
+      align-items: end;
+      width: 100%;
+      height: 100%;
+    }
+
+    .heading-text-container {
+      width: 100%;
+      padding: 2rem 2rem 5rem;
+    }
+
+    .heading-caption {
+      color: white;
+      margin-bottom: 2.7rem;
+      font-size: 1.2rem;
+      line-height: 3.24rem;
+    }
+    .heading-title {
+      color: white;
+      text-transform: capitalize;
+      margin-bottom: 2rem;
+      font-size: 4.4rem;
+      line-height: 4.84rem;
+      font-family: "ITC Galliard";
+    }
+    .heading-description {
+      color: white;
+      font-size: 2.025rem;
+      font-weight: 600;
+    }
+
+    .btn-container {
+      display: flex;
+      gap: 1.6rem;
+      margin-top: 3.2rem;
+      .chantilly-button {
+        display: block;
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+        padding: 1.56rem 2.5rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      height: 820px;
+
+      .heading-text-container {
+        padding: 5rem;
+      }
+
+      .heading-caption {
+        font-size: 1.2rem;
+      }
+      .heading-title {
+        font-size: 5.88rem;
+        line-height: 6.648rem;
+      }
+      .heading-description {
+      }
+    }
+    @media (min-width: 1280px) {
+      .heading-text-container {
+        padding: 7rem;
+      }
+      .heading-title {
+        font-size: 8.4rem;
+        line-height: 9.24rem;
+      }
+    }
+  }
+}

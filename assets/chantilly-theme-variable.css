@@ -1,5 +1,7 @@
 /* Pre Defined */
 .chantilly {
+  /* Black Color */
+  --black-color: #212b36;
   /* Input */
   --input-border-color: #dbdcdc;
   --input-hover-border-color: #b0b1b2;
@@ -10,13 +12,13 @@
   --btn-padding-x: 2.5rem;
   --btn-padding-y: 1.56rem;
 
-  --btn-bg: black;
+  --btn-bg: var(--black-color);
   --btn-color: white;
   --btn-border: blank;
   --btn-opacity: 1;
   --btn-hover-bg: white;
-  --btn-hover-color: black;
-  --btn-hover-border: black;
+  --btn-hover-color: var(--black-color);
+  --btn-hover-border: var(--black-color);
 
   /* Text */
   --text-color: #707173;
@@ -30,23 +32,27 @@
 /* Button */
 
 .chantilly .chantilly-button.button-dark {
-  --btn-bg: black;
+  --btn-bg: var(--black-color);
   --btn-color: white;
   --btn-border: blank;
   --btn-opacity: 1;
   --btn-hover-bg: white;
-  --btn-hover-color: black;
-  --btn-hover-border: black;
+  --btn-hover-color: var(--black-color);
+  --btn-hover-border: var(--black-color);
 }
 
 .chantilly .chantilly-button.button-light {
   --btn-bg: white;
-  --btn-color: black;
-  --btn-border: black;
+  --btn-color: var(--black-color);
+  --btn-border: var(--black-color);
   --btn-opacity: 1;
-  --btn-hover-bg: black;
+  --btn-hover-bg: var(--black-color);
   --btn-hover-color: white;
-  --btn-hover-border: black;
+  --btn-hover-border: var(--black-color);
+}
+
+.chantilly .chantilly-button.button-light.light-fill {
+  --btn-border: white;
 }
 
 .chantilly .chantilly-button.button-hover-orange {
@@ -77,6 +83,6 @@
 }
 
 .chantilly .anchor-black-text {
-  --anchor-text-color: black;
+  --anchor-text-color: var(--black-color);
   --anchor-text-hover-color: #707173;
 }

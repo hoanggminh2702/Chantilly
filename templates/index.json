@@ -1,57 +1,40 @@
 {
   "sections": {
-    "d1f2c8d2-f0e4-4dec-825e-58a839f84439": {
-      "type": "slideshow",
+    "b50363ee-667c-44b4-a727-d3c8d08bbf4a": {
+      "type": "chantilly-image-slide",
       "blocks": {
-        "template--15457143554231__d1f2c8d2-f0e4-4dec-825e-58a839f84439-166659705399d35ab5-1": {
-          "type": "slide",
+        "0390013a-4767-4991-bd0b-0927c52f8e4e": {
+          "type": "style_1",
           "settings": {
-            "image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
-            "heading": "California dreaming",
-            "heading_size": "h1",
-            "subheading": "Retro florals, classic polka dots & sunny shades",
-            "button_label": "SHOP NOW",
-            "link": "",
-            "button_style_secondary": true,
-            "box_align": "bottom-left",
-            "show_text_box": false,
-            "text_alignment": "left",
-            "image_overlay_opacity": 20,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center"
+            "heading_bg": "shopify:\/\/shop_images\/woman-portrait-on-pink-brick.jpg",
+            "sub_heading": "new new new",
+            "heading_title": "Summer Style",
+            "heading_subtitle": "Be the firest to shop the drop",
+            "button_label": "Shop the collection",
+            "button_link": "",
+            "slide_duration": 6000
           }
         },
-        "template--15457143554231__d1f2c8d2-f0e4-4dec-825e-58a839f84439-166659705399d35ab5-0": {
-          "type": "slide",
+        "5df1ce6a-ed0e-4cbf-bed0-9aaf50fa31f9": {
+          "type": "style_2",
           "settings": {
-            "image": "shopify:\/\/shop_images\/background.jpg",
-            "heading": "Rise & Shine",
-            "heading_size": "h0",
-            "subheading": "Bikinis, bodysuits and loungewear sustainably made in California",
-            "button_label": "SHOP THE COLLECTION",
-            "link": "",
-            "button_style_secondary": true,
-            "box_align": "bottom-left",
-            "show_text_box": false,
-            "text_alignment": "left",
-            "image_overlay_opacity": 20,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center"
+            "heading_bg": "shopify:\/\/shop_images\/model-in-sunglasses-and-summer-clothes.jpg",
+            "sub_heading": "new new new",
+            "heading_title": "Summer Style",
+            "heading_subtitle": "Be the firest to shop the drop",
+            "button_1_label": "Shop tops",
+            "button_1_link": "",
+            "button_2_label": "Shop bottoms",
+            "button_2_link": "",
+            "slide_duration": 6000
           }
         }
       },
       "block_order": [
-        "template--15457143554231__d1f2c8d2-f0e4-4dec-825e-58a839f84439-166659705399d35ab5-1",
-        "template--15457143554231__d1f2c8d2-f0e4-4dec-825e-58a839f84439-166659705399d35ab5-0"
+        "0390013a-4767-4991-bd0b-0927c52f8e4e",
+        "5df1ce6a-ed0e-4cbf-bed0-9aaf50fa31f9"
       ],
       "settings": {
-        "layout": "full_bleed",
-        "slide_height": "large",
-        "slider_visual": "dots",
-        "auto_rotate": true,
-        "change_slides_speed": 5,
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
       }
     },
     "rich_text": {
@@ -280,10 +263,16 @@
       ],
       "settings": {
       }
+    },
+    "7fb9623e-87bd-47f1-9e26-5ee458c376a7": {
+      "type": "chantilly-featured-collection",
+      "settings": {
+        "collection": "all"
+      }
     }
   },
   "order": [
-    "d1f2c8d2-f0e4-4dec-825e-58a839f84439",
+    "b50363ee-667c-44b4-a727-d3c8d08bbf4a",
     "rich_text",
     "63b74c96-4429-47d4-a5ec-ae2193bb8aac",
     "featured_collection",
@@ -293,6 +282,7 @@
     "1bbd15b0-c304-4a46-aa37-d5f4eb03b361",
     "8b02218b-2f84-4719-924f-ab8540180e44",
     "d380dd54-2b76-465a-b1aa-5ef2b5852635",
-    "8957acf3-c42d-484d-965c-a23aa31eb500"
+    "8957acf3-c42d-484d-965c-a23aa31eb500",
+    "7fb9623e-87bd-47f1-9e26-5ee458c376a7"
   ]
 }

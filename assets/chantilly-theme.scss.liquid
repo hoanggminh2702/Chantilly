@@ -12,6 +12,10 @@
     padding-left: 2rem;
     padding-right: 2rem;
 
+    &.fluid {
+      max-width: 100%;
+    }
+
     @media (min-width: 767px) {
       padding-left: 3rem;
       padding-right: 3rem;
@@ -32,11 +36,16 @@
     height: 100%;
   }
 
-  img.chantilly-img-ratio {
+  img.chantilly-img-ratio,
+  svg.chantilly-img-ratio {
     width: 100%;
 
     object-fit: cover;
     object-position: center;
+
+    &.full-height {
+      height: 100%;
+    }
 
     &.absolute {
       height: 100%;
@@ -48,10 +57,6 @@
     &.contain {
       object-fit: contain;
     }
-  }
-
-  .chantilly-container.fluid {
-    max-width: 100%;
   }
 
   .card {
@@ -74,6 +79,9 @@
     padding: var(--btn-padding-y) var(--btn-padding-x);
     border-radius: 4px;
     transition: background-color 0.1s linear;
+
+    text-decoration: none;
+    white-space: nowrap;
 
     &:hover {
       background: var(--btn-hover-bg);

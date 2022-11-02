@@ -1,0 +1,34 @@
+.chantilly-featured-product-controller {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .chantilly-product-container {
+    width: 100%;
+  }
+  .change-slide-controller {
+    display: flex;
+  }
+
+  .custom-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--black-color);
+
+    > svg {
+        width: 24px;
+        height: 24px;
+
+        color: var(--black-color);
+    }
+
+    &.prev-btn {
+        transform: rotate(180deg);
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+  }
+}

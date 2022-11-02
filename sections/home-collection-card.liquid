@@ -1,21 +1,21 @@
 {{ 'home-collection.scss.css' | asset_url | stylesheet_tag}}
 <link type="text/css" href="{{ 'home-collection.scss.css' | asset_url }}" rel="stylesheet">
 
-<div class="home-collection-container desktop chantilly-container mobile:hidden tablet:block px-4 py-8">
-  <div class="row g-4">
+<div class="home-collection-container desktop chantilly-container">
+  <div class="home-collection-row row">
     {% for link in linklists['swimwear'].links %}
       {% assign handleizedTitle = link.title | handleize %}
       {% assign col = collections[handleizedTitle] %}
       {% assign colImg = col.image %}
       <div class="col col-6 col-xl-3">
-        <div class="collection-card-wrapper w-full pt-[160%] relative">
-          <a href="{{link.url}}" class="btn btn-light collection-link align-element-center text-[0.9rem] px-4 py-3">{{link.title | upcase}}
+        <div class="collection-card-wrapper">
+          <a href="{{link.url}}" class="chantilly-button button-light light-fill collection-link align-element-center ">{{link.title | upcase}}
           </a>
-          <div class="card-img-container absolute -z-10 top-0 left-0 w-full h-full">
+          <div class="card-img-container">
             {% if colImg != blank %}
-              <img class="card-img w-full h-full object-cover object-center" src="{{colImg | img_url: 'master'}}"/>
+              <img class="card-img" src="{{colImg | img_url: 'master'}}"/>
             {% else %}
-              {{'product-1' | placeholder_svg_tag: 'card-img w-full h-full object-cover object-center'}}
+              {{'product-1' | placeholder_svg_tag: 'card-img'}}
 
             {% endif %}
           </div>
@@ -41,7 +41,7 @@
         {% assign colImg = col.image %}
 
         <div class="collection-card-wrapper w-full pt-[160%] relative carousel-item {% if isActive %}active{% assign isActive = false %}{% endif %}">
-          <a href="{{link.url}}" class="btn btn-light collection-link align-element-center text-[0.9rem] px-4 py-3">{{link.title | upcase}}
+          <a href="{{link.url}}" class="chantilly-button button-light light-fill collection-link align-element-center text-[0.9rem] px-4 py-3">{{link.title | upcase}}
           </a>
           <div class="card-img-container absolute -z-10 top-0 left-0 w-full h-full">
             {% if colImg != blank %}
