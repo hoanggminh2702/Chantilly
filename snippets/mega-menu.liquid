@@ -1,0 +1,57 @@
+<div class="menu-expand mega-menu-container">
+  <div class="chantilly-container">
+    {% capture grid_column_class %}grid-{{links.size}}-column{% endcapture %}
+    <ul class="mega-menu {{grid_column_class}} anchor-grey-text">
+      {% for link in links %}
+
+        <li class="mega-menu-item">
+          {% if link.links.size > 0 %}
+            <p class="lv-1-menu-link-wrapper">
+              <a href="{{link.url}}" class="lv-1-menu-link">{{link.title}}</a>
+            </p>
+            <ul class="lv-2-menu-container">
+              {% for childLink in link.links %}
+                <li class="lv-2-menu-link-wrapper">
+                  <a href="{{childLink.url}}" class="lv-2-menu-link">{{childLink.title}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            {% assign notFoundCustomCollection = true %}
+            {% assign collection_title = link.title %}
+
+            {% for block in section.blocks %}
+              {% if block.type == "single_collection_custom" %}
+                {% if block.settings.collection_handle == link.handle %}
+                  {% if block.settings.collection_title != blank %}
+                    {% assign  collection_title = block.settings.collection_title  %}
+                  {% endif %}
+                  {% if block.settings.collection_img %}
+                    {% assign notFoundCustomCollection = false %}
+                    <a href="{{link.url}}" class="custom-single-collection-container">
+                      <div class="custom-collection-img-container">
+                        <img src="{{block.settings.collection_img | img_url: 'large'}}" alt="" class="chantilly-img-ratio absolute">
+                      </div>
+                      <span class="single-collection-link">
+                        {{collection_title}}
+                      </span>
+                    </a>
+                  {% endif %}
+
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+
+            {% if notFoundCustomCollection %}
+              <p class="lv-1-menu-link-wrapper">
+                <a href="{{link.url}}" class="lv-1-menu-link">
+                  {{collection_title}}</a>
+              </p>
+            {% endif %}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+</div>

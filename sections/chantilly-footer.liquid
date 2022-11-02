@@ -1,44 +1,80 @@
 {{'chantilly-footer.scss.css' | asset_url | stylesheet_tag}}
 <div class="footer-container">
+
   <div class="main-footer container-fluid border-b-[1px] border-solid border-[#ecd6d1]">
     <div class="row link-and-description-row justify-between gap-y-12 pt-[3.75rem] pb-[5rem] px-7">
-      <div class="footer-description col col-12 col-md-6 col-lg-auto">
-        <p>Best Swimwear is a bikini boutique, in sunny Hermosa Beach, California.</p>
-        <p>They designed the store with the female in mind. A warm environment where instead of feeling self-conscious she feels secure in her own body, not limited by age, size or shape, wearing swimwear that fits and feels good.</p>
-        <div class="img-wrapper w-[150px]">
-          <img class="w-full" src="https://cdn.shopify.com/s/files/1/0238/8505/files/chantilly-logo-new_300x.png?v=1618930190" alt="">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'description' %}
+            {% if block.settings.description_text %}
+              <div class="footer-description col col-12 col-md-6 col-lg-auto">
+                {{block.settings.description_text}}
 
-        </div>
-      </div>
-      <div class="link-list col col-12 col-md-6 col-lg-auto">
-        <h6 class="chantilly-footer-title">About</h6>
-        <ul class="link-list-items">
-          <li>Our blog</li>
-          <li>About us</li>
-          <li>Contact us</li>
-          <li>FAQs</li>
-          <li>Search</li>
-        </ul>
-      </div>
-      <div class="link-list col col-12 col-md-6 col-lg-auto">
-        <h6 class="chantilly-footer-title">Shop</h6>
-        <ul class="link-list-items">
-          <li>Swim Tops</li>
-          <li>Swim Bottoms</li>
-          <li>One Pieces</li>
-          <li>Cover-ups</li>
-        </ul>
-      </div>
-      <div class="email-subscriber col col-12 col-md-6 col-lg-auto">
-        <h6 class="chantilly-footer-title">Join our email list!</h6>
-        <p>Get 15% off your first purchase! Plus, be the first to know about sales, new product launches and exclusive offers!</p>
 
-        <form action="" method="post" class="subscribe-email-form">
-          <input type="email" class="form-control mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                {% if block.settings.description_img %}
+                  <div class="img-wrapper w-[150px]">
+                    <img class="w-full" src="{{block.settings.descripotion_img | img_url: "large"}}" alt="">
 
-          <button type="submit" class="chantilly-button button-dark">Sign up</button>
-        </form>
-      </div>
+                  </div>
+                {% elsif block.settings.description_img_src %}
+                  <div class="img-wrapper w-[150px]">
+                    <img class="w-full" src="{{block.settings.description_img_src}}" alt="">
+
+                  </div>
+
+                </div>
+              {% endif %}
+            {% endif %}
+          {% when 'menu' %}
+            {% if block.settings.first_menu %}
+
+              <div class="link-list col col-12 col-md-6 col-lg-auto">
+                <h6 class="chantilly-menu-footer-title">{{block.settings.first_menu.title}}</h6>
+                {% if block.settings.first_menu.links.size > 0 %}
+                  <ul class="link-list-items">
+                    {% for item in block.settings.first_menu.links %}
+                      <li>
+                        <a href="{{item.url}}" class="footer-menu-item">{{item.title}}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            {% if block.settings.second_menu %}
+              <div class="link-list col col-12 col-md-6 col-lg-auto">
+                <h6 class="chantilly-menu-footer-title">Shop</h6>
+                {% if block.settings.second_menu.links.size > 0 %}
+                  <ul class="link-list-items">
+                    {% for item in block.settings.second_menu.links %}
+                      <li>
+                        <a href="{{item.url}}" class="footer-menu-item">{{item.title}}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            {% endif %}
+
+          {% when 'email_subscriber' %}
+
+            <div class="email-subscriber col col-12 col-md-6 col-lg-auto">
+              <h6 class="chantilly-menu-footer-title">{{block.settings.title}}</h6>
+              <p>{{block.settings.description}}</p>
+
+              <form action="" method="post" class="subscribe-email-form">
+                <input type="email" class="form-control chantilly-input mb-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+                <button type="submit" class="chantilly-button button-hover-orange uppercase">Sign up</button>
+              </form>
+
+              {% render 'social-link' %}
+            </div>
+
+        {% endcase %}
+      {% endfor %}
+
     </div>
   </div>
   <div class="bottom-footer-container container-fluid footer-bg-color">
@@ -50,7 +86,7 @@
           <option value="2">Two</option>
           <option value="3">Three</option>
         </select>
-        <span class="text-[0.775rem]">© 2022 CHANTILLY. Website template by Shopify</span>
+        <span class="copyright-text">© 2022 CHANTILLY. Website template by Shopify</span>
       </div>
       <div class="right-bottom-footer-side flex flex-col gap-y-6">
         {% render 'payment-list-icon' %}
@@ -79,6 +115,68 @@
         "type": "color",
         "label": "Main Footer Color",
         "default": "#f4dfdb"
+      }
+    ],
+
+    "blocks": [
+      {
+        "type": "description",
+        "name": "Description",
+        "limit": 1,
+        "settings": [
+          {
+            "id": "description_text",
+            "type": "richtext",
+            "label": "Description Text",
+            "default": "<p></p>"
+          }, {
+            "id": "description_img",
+            "type": "image_picker",
+            "label": "Description Image"
+          }, {
+            "id": "description_img_src",
+            "type": "url",
+            "label": "Description Image Source"
+          }
+        ]
+      }, {
+        "type": "menu",
+        "name": "Footer Menu",
+        "limit": 1,
+        "settings": [
+          {
+            "id": "first_menu",
+            "type": "link_list",
+            "label": "First Footer Menu"
+          }, {
+            "id": "second_menu",
+            "type": "link_list",
+            "label": "Second Footer Menu"
+          }
+        ]
+      }, {
+        "type": "email_subscriber",
+        "name": "Email Subsrciber",
+        "limit": 1,
+        "settings": [
+          {
+            "id": "title",
+            "label": "Email Title",
+            "type": "text",
+            "default": "Join our email list!"
+          }, {
+            "id": "description",
+            "label": "Email Description",
+            "type": "textarea",
+            "default": "Get 15% off your first purchase! Plus, be the first to know about sales, new product launches and exclusive offers!"
+          }, {
+            "id": "show_social",
+            "label": "Show Social",
+            "type": "checkbox",
+            "default": true
+          }
+        ]
+
       }
     ],
     "presets": [

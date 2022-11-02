@@ -1,7 +1,7 @@
 {{ 'upper-footer.scss.css' | asset_url | stylesheet_tag}}
 
 <div class="upper-footer-bar color-{{ section.settings.color_scheme }} gradient">
-  <div class="container py-4">
+  <div class="chantilly-container py-4 mx-auto">
     <div class="row gx-2 gy-4">
       {% for block in section.blocks %}
         {% if block.type == "icon" %}
@@ -9,18 +9,7 @@
           <div class="col-6 col-md-3">
 
             {% capture icon %}
-              {% case iconSettings.icon %}
-                {% when 'truck' %}
-                  {% render 'chantilly-truck-icon' %}
-                {% when 'tag' %}
-                  {% render 'chantilly-tag-icon' %}
-                {% when 'gift' %}
-                  {% render 'chantilly-gift-icon' %}
-                {% when 'star' %}
-                  {% render 'chantilly-star-icon' %}
-                {% else %}
-              {% endcase %}
-            {% endcapture %}
+              {% render 'icon-by-name', with icon_name: iconSettings.icon %}{% endcapture %}
 
             {% if iconSettings.url != blank %}
 

@@ -1,0 +1,132 @@
+.menu-expand {
+  background: white;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s linear;
+
+  box-shadow: 3px 3px 20px -15px;
+
+  li {
+    list-style-type: none;
+  }
+
+  a {
+    color: var(--anchor-text-color);
+    text-decoration: none;
+    white-space: nowrap;
+    &:hover {
+      color: var(--anchor-text-hover-color);
+    }
+  }
+}
+
+.mega-menu-container {
+  width: 100%;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  .mega-menu {
+    display: grid;
+    column-gap: 1rem;
+    padding: 3.2rem 1.2rem;
+  }
+
+  .mega-menu-item {
+    padding: unset 1.5rem 2rem;
+  }
+
+  .lv-1-menu-link {
+    color: #9b9c9d;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+
+  .lv-2-menu-container {
+    padding-left: 0;
+  }
+
+  .custom-single-collection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .custom-collection-img-container {
+      width: 100%;
+      padding-top: 62.5%;
+      position: relative;
+    }
+  }
+}
+
+.dropdown-menu-container {
+  position: absolute;
+  top: 100%;
+  left: 1.8rem;
+  padding-left: 0;
+
+  background-color: white;
+  padding: 2.2rem 2rem 2.2rem 3rem;
+
+  a {
+    color: var(--anchor-text-color);
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 0.5rem unset;
+
+    &:hover {
+      color: var(--anchor-text-hover-color);
+    }
+  }
+}
+
+.mega-menu-promotion-container {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  padding: 8rem 0;
+
+  .text-side {
+    margin-left: 15%;
+    margin-right: 15%;
+
+    * {
+        text-align: center;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sub-heading {
+    margin-bottom: 2.52rem;
+    font-size: 1.2rem;
+    color: var(--text-color)
+  }
+
+  .major-title {
+    margin-bottom: 2rem;
+    font-size: 3.4rem;
+    font-family: "ITC Galliard";
+  }
+
+  .sub-text {
+    color: var(--text-color)
+  }
+
+  .btn-area {
+    margin-top: 2.2rem;
+    .chantilly-button {
+        padding: 1.56rem 2.5rem;
+    }
+
+    .chantilly-button + .chantilly-button {
+        margin-left: 1.3rem;
+    }
+  }
+}

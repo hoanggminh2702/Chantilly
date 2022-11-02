@@ -6,8 +6,12 @@
   - isChildrenListLink: {Boolean}
 {%- endcomment -%}
 {% if isRenderedList %}
+  {% assign size = 4 %}
+  {% unless isChildrenListLink %}
+    {% assign size = 5 %}
+  {% endunless %}
   <div class="relative-collections-container row gx-4 gx-md-5 gy-4 gy-md-0">
-    {% for link in links limit: 4 %}
+    {% for link in links limit: size %}
       {% if isChildrenListLink %}
         {% for renderCollection in collections %}
           {% if renderCollection.handle == link.handle %}

@@ -1,0 +1,168 @@
+.main-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-color: white;
+}
+.chantilly-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  .method-icon {
+    display: flex;
+    align-items: center;
+
+    color: inherit;
+    font-size: 24px;
+
+    cursor: pointer;
+  }
+
+  .desktop-nav-bar {
+    flex: 2;
+    display: none;
+  }
+
+  .method-icon-mobile {
+    flex: 2;
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+
+    .menu-icon {
+      display: inline;
+    }
+  }
+
+  .page-logo {
+    display: flex;
+    width: 130px;
+    padding: 1rem 0;
+  }
+
+  .method-icon-wrapper {
+    flex: 2;
+  }
+
+  .method-icon-container {
+    display: flex;
+    justify-content: end;
+    gap: 1.5rem;
+    font-size: 20px;
+
+    .search-icon {
+      display: none;
+    }
+  }
+
+  @media (min-width: 320px) {
+  }
+  @media (min-width: 768px) {
+    .method-icon-mobile {
+      .menu-icon {
+        display: hidden;
+      }
+    }
+
+    .page-logo {
+      padding: 2rem 0;
+      width: 155px;
+    }
+  }
+  @media (min-width: 1280px) {
+    .desktop-nav-bar {
+      display: block;
+    }
+
+    .method-icon-mobile {
+      display: none;
+    }
+
+    .method-icon-container {
+      .search-icon {
+        display: flex;
+      }
+    }
+  }
+
+  & + .mobile-navbar {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: inline;
+    }
+
+    @media (min-width: 1280px) {
+      display: none;
+    }
+  }
+}
+
+.nav-bar-container {
+  border-bottom: 1px solid var(--bs-border-color);
+  .nav-bar-menu {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0 -1.8rem;
+  }
+
+  .nav-bar-item {
+    list-style-type: none;
+    font-size: 1.4rem;
+
+    &.dropdown {
+      position: relative;
+    }
+
+    > a {
+      display: inline-block;
+      position: relative;
+      font-size: inherit;
+      color: var(--anchor-text-color);
+
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 2.2rem 1.8rem;
+
+      transition: color 0.15s linear;
+      &:hover {
+        color: var(--anchor-text-hover-color);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        height: 2px;
+        width: calc(100% - 3.6rem);
+        bottom: -1px;
+        left: 1.8rem;
+        background-color: currentColor;
+        transform: scale(0);
+        transition: transform 0.25s linear;
+      }
+    }
+
+    &:hover a::before {
+      transform: scale(1);
+    }
+
+    // Show menu file, find in mega_menu, dropdown file in snippets folder
+    &:hover {
+      .menu-expand {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    border: 0;
+    .nav-bar-menu {
+      justify-content: start;
+    }
+  }
+}

@@ -86,7 +86,7 @@
     "social_twitter_link": "askdfj",
     "social_facebook_link": "https:\/\/facebook.com",
     "social_pinterest_link": "",
-    "social_instagram_link": "",
+    "social_instagram_link": "http:\/\/instagram.com\/shopify",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
@@ -107,8 +107,7 @@
             "type": "announcement",
             "settings": {
               "color_scheme": "background-1",
-              "link": "",
-              "isSocialLink": false
+              "link": ""
             }
           },
           "4950c790-959e-40cc-a74a-e6c65bb4ceb4": {
@@ -122,23 +121,16 @@
             "settings": {
               "message": "<p>Welcome to our store<\/p>"
             }
-          },
-          "0e0ca3f2-7b28-4f6d-b627-1b544695f491": {
-            "type": "social",
-            "settings": {
-              "social_type": "icon-facebook",
-              "social_link": ""
-            }
           }
         },
         "block_order": [
           "announcement-bar-0",
           "4950c790-959e-40cc-a74a-e6c65bb4ceb4",
-          "014537b1-9451-43ef-9e82-7eaf94395297",
-          "0e0ca3f2-7b28-4f6d-b627-1b544695f491"
+          "014537b1-9451-43ef-9e82-7eaf94395297"
         ],
         "settings": {
-          "announcement": "alksdjflasj"
+          "announcement": "alksdjflasj",
+          "is_social_link": true
         }
       },
       "header": {
@@ -238,24 +230,24 @@
           "upper-footer-1": {
             "type": "icon",
             "settings": {
-              "icon": "truck",
-              "caption": "Caption",
+              "icon": "tag",
+              "caption": "New styles",
               "url": ""
             }
           },
           "upper-footer-2": {
             "type": "icon",
             "settings": {
-              "icon": "truck",
-              "caption": "Caption",
+              "icon": "gift",
+              "caption": "Gift cards",
               "url": ""
             }
           },
           "upper-footer-3": {
             "type": "icon",
             "settings": {
-              "icon": "truck",
-              "caption": "Caption",
+              "icon": "star",
+              "caption": "5.0 Trustpilot rating",
               "url": ""
             }
           }
@@ -268,6 +260,127 @@
         ],
         "settings": {
           "color_scheme": "chantilly"
+        }
+      },
+      "chantilly-footer": {
+        "type": "chantilly-footer",
+        "blocks": {
+          "93063fb6-7cd7-4bc9-919e-3e589bca1d1c": {
+            "type": "description",
+            "settings": {
+              "description_text": "<p>Best Swimwear is a bikini boutique, in sunny Hermosa Beach, California.<\/p><p>They designed the store with the female in mind. A warm environment where instead of feeling self-conscious she feels secure in her own body, not limited by age, size or shape, wearing swimwear that fits and feels good.<\/p>",
+              "description_img_src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0238\/8505\/files\/chantilly-logo-new_300x.png?v=1618930190"
+            }
+          },
+          "fcc8feb0-cfb0-49a5-a235-babf6a3ad7fe": {
+            "type": "menu",
+            "settings": {
+              "first_menu": "about-1",
+              "second_menu": "shop"
+            }
+          },
+          "ac24320b-ca3e-4e46-bb88-7c192872944e": {
+            "type": "email_subscriber",
+            "settings": {
+              "title": "Join our email list!",
+              "description": "Get 15% off your first purchase! Plus, be the first to know about sales, new product launches and exclusive offers!",
+              "show_social": true
+            }
+          }
+        },
+        "block_order": [
+          "93063fb6-7cd7-4bc9-919e-3e589bca1d1c",
+          "fcc8feb0-cfb0-49a5-a235-babf6a3ad7fe",
+          "ac24320b-ca3e-4e46-bb88-7c192872944e"
+        ],
+        "settings": {
+          "upper_footer_bar_bg-color": "#f7f1f0",
+          "main_footer_bg_color": "#f4dfdb"
+        }
+      },
+      "chantilly-header": {
+        "type": "chantilly-header",
+        "blocks": {
+          "5dfaaa62-d9f6-499d-835c-2216b6ab3c6c": {
+            "type": "mega_menu",
+            "settings": {
+              "menu_handle": "shop"
+            }
+          },
+          "5798635a-7eba-46f1-8d37-6f2ac7e1f99a": {
+            "type": "single_collection_custom",
+            "settings": {
+              "collection_handle": "new-in",
+              "collection_title": "New Arrivals",
+              "collection_img": "shopify:\/\/shop_images\/handful-of-acorns.jpg"
+            }
+          },
+          "a94f2531-ec47-479f-9cf8-d8ec81427a78": {
+            "type": "single_collection_custom",
+            "settings": {
+              "collection_handle": "best-seller",
+              "collection_title": "",
+              "collection_img": "shopify:\/\/shop_images\/golden-autumn-leaves.jpg"
+            }
+          },
+          "7f674745-4a73-4605-9b28-30c4104c2a22": {
+            "type": "mega_menu",
+            "settings": {
+              "menu_handle": "brands"
+            }
+          },
+          "3e887ffa-f75e-4525-ae0e-c17769b9fd9e": {
+            "type": "single_collection_custom",
+            "settings": {
+              "collection_handle": "best-swimwear",
+              "collection_title": "",
+              "collection_img": "shopify:\/\/shop_images\/minimalist-retail-clothing-display.jpg"
+            }
+          },
+          "f4d8694e-66ea-40ba-8e3c-09094f54db3a": {
+            "type": "single_collection_custom",
+            "settings": {
+              "collection_handle": "rhythm",
+              "collection_title": "",
+              "collection_img": "shopify:\/\/shop_images\/woman-applying-lipstick.jpg"
+            }
+          },
+          "92fe9f12-b158-441f-9ab9-5a74090d4725": {
+            "type": "single_collection_custom",
+            "settings": {
+              "collection_handle": "sunsets",
+              "collection_title": "",
+              "collection_img": "shopify:\/\/shop_images\/model-laughs-barefoot.jpg"
+            }
+          },
+          "cc3ebc36-7faa-4079-8bcf-5f965eebe038": {
+            "type": "single_collection_custom",
+            "settings": {
+              "collection_handle": "swim-systems",
+              "collection_title": "",
+              "collection_img": "shopify:\/\/shop_images\/studded-flats.jpg"
+            }
+          },
+          "b378d0d4-77f2-45d7-bc4c-283e51fb042f": {
+            "type": "promotion_mega_menu",
+            "settings": {
+              "menu_handle": "our-world"
+            }
+          }
+        },
+        "block_order": [
+          "5dfaaa62-d9f6-499d-835c-2216b6ab3c6c",
+          "5798635a-7eba-46f1-8d37-6f2ac7e1f99a",
+          "a94f2531-ec47-479f-9cf8-d8ec81427a78",
+          "7f674745-4a73-4605-9b28-30c4104c2a22",
+          "3e887ffa-f75e-4525-ae0e-c17769b9fd9e",
+          "f4d8694e-66ea-40ba-8e3c-09094f54db3a",
+          "92fe9f12-b158-441f-9ab9-5a74090d4725",
+          "cc3ebc36-7faa-4079-8bcf-5f965eebe038",
+          "b378d0d4-77f2-45d7-bc4c-283e51fb042f"
+        ],
+        "settings": {
+          "main_bar_color": "#212121"
         }
       }
     },

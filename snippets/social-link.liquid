@@ -1,0 +1,18 @@
+{{'social-link-list.scss.css ' | asset_url | stylesheet_tag}}
+<div class="social-link-list flex justify-start">
+  {%- if settings.social_facebook_link != blank -%}
+    <a class="text-inherit social-link" href="{{settings.social_url}}">
+      {% render 'icon-by-name', with icon_name: "facebook" %}
+    </a>
+  {%- endif -%}
+  {%- if settings.social_youtube_link != blank -%}
+    <a class="text-inherit social-link" href="{{settings.social_url}}">
+      {% render 'icon-by-name', with icon_name: "youtube" %}
+    </a>
+  {%- endif -%}
+  {%- if settings.social_instagram_link != blank -%}
+    <a class="text-inherit social-link" href="{{settings.social_url}}">
+      {% render 'icon-by-name', with icon_name: "instagram" %}
+    </a>
+  {%- endif -%}
+</div>

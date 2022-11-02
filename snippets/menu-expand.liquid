@@ -1,0 +1,20 @@
+{{'menu-expand.scss.css' | asset_url | stylesheet_tag}}
+{% case type_of_menu %}
+  {% when 'mega_menu' %}
+    {% render 'mega-menu' , with links: link.links %}
+  {% when 'promotion_mega_menu' %}
+
+    {% render 'mega-menu-promotion' %}
+  {% when 'dropdown' %}
+    {% if link.links.size > 0 %}
+      <ul class="menu-expand dropdown-menu-container anchor-grey-text">
+        {% for link in link.links %}
+          <li class="dropdown-menu-item">
+            <a href="{{link.url}}">{{link.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+
+    {% endif %}
+
+{% endcase %}

@@ -1,7 +1,7 @@
 {{ 'spotlight-content.scss.css' | asset_url | stylesheet_tag}}
 
 <div class="spotlight-content-container">
-  <div class="row container gy-5 gy-md-0 gx-md-5">
+  <div class="row chantilly-container gy-5 gy-md-0 gx-md-5">
     {% for block in section.blocks %}
       {% if block.type == 'spotlight-content' %}
         {% assign blockSettings = block.settings %}

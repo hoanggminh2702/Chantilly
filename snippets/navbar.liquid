@@ -1,0 +1,21 @@
+<div class="nav-bar-container ">
+  <ul class="nav-bar-menu mobile:justify-center desktop:justify-start p-0 mb-0">
+    {% for link in linklists.header-menu.links %}
+      {% assign type_of_menu = 'dropdown' %}
+      {% for block in section.blocks %}
+        {% if block.settings.menu_handle == link.handle %}
+          {% assign type_of_menu = block.type %}
+          {% break %}
+        {% endif %}
+
+      {% endfor %}
+
+      <li class="nav-bar-item list-none col-auto {{type_of_menu}} anchor-black-text">
+        <a class="inline-block no-underline text-inherit" href="{{ link.url }}">{{ link.title }}
+        </a>
+
+        {% render 'menu-expand', with type_of_menu: type_of_menu, link: link %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

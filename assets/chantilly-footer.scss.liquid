@@ -1,6 +1,6 @@
 .footer-container {
   .main-footer {
-    border: 1px solid #ecd6d1;
+    border-bottom: 1px solid #ecd6d1;
     padding: 3.75rem 2rem;
   }
 
@@ -16,8 +16,12 @@
       margin-bottom: 40px;
     }
 
-    .chantilly-footer-title {
+    .chantilly-menu-footer-title {
+      font-size: 1.8rem;
       margin-top: 0;
+      font-family: "ITC Galliard";
+      margin-bottom: 2rem;
+      color: black;
     }
   }
 
@@ -27,8 +31,18 @@
     }
     .link-list-items > li {
       list-style-type: none;
+
+      a {
+        color: #676869;
+        text-decoration: none;
+        &:hover {
+          opacity: 0.75
+        }
+      }
     }
   }
+
+
 
   .img-wrapper {
     width: 150px;
@@ -106,9 +120,13 @@
     }
   }
 
+  .copyright-text {
+    font-size: 1.2rem;
+  }
+
   .policy-and-term a {
     text-decoration: none;
     color: inherit;
-    font-size: 0.775rem;
+    font-size: 1.2rem;
   }
 }

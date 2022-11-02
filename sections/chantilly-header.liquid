@@ -1,0 +1,98 @@
+{{'chantilly-header.scss.css' | asset_url | stylesheet_tag}}
+<div class="chantilly-header-container chantilly-container fluid mobile:px-2 tablet:px-7 desktop:px-8 flex items-center justify-between main-bar-color border-bottom">
+
+  <div class="desktop-nav-bar flex-[2] mobile:hidden desktop:block">
+    {% render 'navbar' %}
+  </div>
+  <div class="method-icon-mobile flex-[2] mobile:flex flex-start desktop:hidden">
+    <span class="menu-icon mobile:!inline tablet:!hidden method-icon">
+      {% render 'icon-by-name', with icon_name: "menu" %}
+
+    </span>
+    <span class="method-icon">
+      {% render 'icon-by-name', with icon_name: "search" %}
+    </span>
+  </div>
+  <a href="/" class="page-logo flex mobile:w-[130px] tablet:w-[155px] mobile:py-[0.625rem] tablet:py-4"><img class="chantilly-img-ratio contain" src="https://cdn.shopify.com/s/files/1/0238/8505/files/chantilly-logo-new_310x.png?v=1618930190"/></a>
+  <div class="method-icon-wrapper flex-[2]">
+    <div class="method-icon-container flex justify-end gap-6 text-[20px]">
+      <a class="method-icon" href="{{routes['account_login_url']}}">
+        {% render 'icon-by-name', with icon_name: "user" %}
+      </a>
+
+      <a class="method-icon search-icon mobile:!hidden desktop:!inline" href="#">
+        {% render 'icon-by-name', with icon_name: "search" %}
+      </a>
+
+      <a class="method-icon" href="{{routes['cart_url']}}">
+        {% render 'icon-by-name', with icon_name: "cart" %}
+      </a>
+
+    </div>
+  </div>
+</div>
+<div class="mobile-navbar mobile:hidden tablet:block desktop:hidden">
+  {% render 'navbar' %}
+</div>
+
+{% schema %}
+  {
+    "name": "Main Bar",
+    "class": "main-bar",
+    "settings": [
+      {
+        "type": "color",
+        "label": "Main Bar Text Color",
+        "id": "main_bar_color",
+        "default": "#212121"
+
+      }
+    ],
+    "blocks": [
+      {
+        "type": "promotion_mega_menu",
+        "name": "Promotion Mega Menu",
+        "settings": [
+          {
+            "id": "menu_handle",
+            "label": "Menu Handle",
+            "type": "text"
+          }
+        ]
+      }, {
+        "type": "mega_menu",
+        "name": "Mega Menu",
+        "settings": [
+          {
+            "id": "menu_handle",
+            "label": "Menu Handle",
+            "type": "text"
+          }
+        ]
+      }, {
+        "type": "single_collection_custom",
+        "name": "Custom Single Collection",
+        "settings": [
+          {
+            "id": "collection_handle",
+            "type": "text",
+            "label": "Collection Handle"
+          }, {
+            "id": "collection_title",
+            "type": "text",
+            "label": "Collection Title"
+
+          }, {
+            "id": "collection_img",
+            "label": "Collection Image",
+            "type": "image_picker"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+{% style %}
+  .main-bar-color {
+    color: {{ section.settings.main_bar_color }}}
+{% endstyle %}

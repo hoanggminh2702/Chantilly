@@ -1,7 +1,7 @@
 {{ 'home-collection.scss.css' | asset_url | stylesheet_tag}}
 <link type="text/css" href="{{ 'home-collection.scss.css' | asset_url }}" rel="stylesheet">
 
-<div class="home-collection-container desktop container mobile:hidden tablet:block px-4 py-8">
+<div class="home-collection-container desktop chantilly-container mobile:hidden tablet:block px-4 py-8">
   <div class="row g-4">
     {% for link in linklists['swimwear'].links %}
       {% assign handleizedTitle = link.title | handleize %}
