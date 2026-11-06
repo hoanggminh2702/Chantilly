@@ -70,7 +70,7 @@
                       {% if blockQ.settings.topic_id == block.settings.topic_id %}
                         {% capture collapse_id %}
                           {{blockQ.settings.topic_id}}-{{collapse_order}}{% endcapture %}
-                        {% render 'chantilly-collapse' with collapse_content_id:  collapse_id, collapse_title: blockQ.settings.question, collapse_content: blockQ.settings.answer %}
+                        {% render 'chantilly-collapse' with collapse_content_id, collapse_content_id: collapse_id, collapse_title: blockQ.settings.question, collapse_content: blockQ.settings.answer %}
                         {% assign collapse_order = collapse_order  | plus: 1 %}
 
                       {% endif %}
@@ -173,4 +173,16 @@
   }
 {% endschema %}
 
-{{'handleSearchFaqs.js' | asset_url | script_tag}}
+{{'handleSearchFaqs.js' | asset_url | script_tag}}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'chantilly-collapse' with collapse_content_id:  collapse_id, collapse_title:
+    blockQ.settings.question, collapse_content: blockQ.settings.answer %}"
+  to: "{% render 'chantilly-collapse' with collapse_content_id, collapse_content_id:
+    collapse_id, collapse_title: blockQ.settings.question, collapse_content: blockQ.settings.answer
+    %}"
+  position: 3199..3375
+{%- endcomment -%}

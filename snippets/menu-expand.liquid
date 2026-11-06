@@ -1,7 +1,7 @@
 {{'menu-expand.scss.css' | asset_url | stylesheet_tag}}
 {% case type_of_menu %}
   {% when 'mega_menu' %}
-    {% render 'mega-menu' , with links: link.links %}
+    {% render 'mega-menu', links: link.links %}
   {% when 'promotion_mega_menu' %}
 
     {% render 'mega-menu-promotion' %}
@@ -17,4 +17,13 @@
 
     {% endif %}
 
-{% endcase %}
+{% endcase %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'mega-menu' , with links: link.links %}"
+  to: "{% render 'mega-menu', links: link.links %}"
+  position: 109..152
+{%- endcomment -%}

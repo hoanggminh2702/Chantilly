@@ -14,8 +14,17 @@
         <a class="inline-block no-underline text-inherit" href="{{ link.url }}">{{ link.title }}
         </a>
 
-        {% render 'menu-expand', with type_of_menu: type_of_menu, link: link %}
+        {% render 'menu-expand', type_of_menu: type_of_menu, link: link %}
       </li>
     {% endfor %}
   </ul>
-</div>
+</div>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'menu-expand', with type_of_menu: type_of_menu, link: link %}"
+  to: "{% render 'menu-expand', type_of_menu: type_of_menu, link: link %}"
+  position: 625..691
+{%- endcomment -%}

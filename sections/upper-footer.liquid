@@ -9,7 +9,7 @@
           <div class="col-6 col-md-3">
 
             {% capture icon %}
-              {% render 'icon-by-name', with icon_name: iconSettings.icon %}{% endcapture %}
+              {% render 'icon-by-name', icon_name: iconSettings.icon %}{% endcapture %}
 
             {% if iconSettings.url != blank %}
 
@@ -151,4 +151,13 @@
       ]
     }
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon-by-name', with icon_name: iconSettings.icon %}"
+  to: "{% render 'icon-by-name', icon_name: iconSettings.icon %}"
+  position: 438..495
+{%- endcomment -%}

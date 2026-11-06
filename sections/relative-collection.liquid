@@ -1,4 +1,4 @@
-{% render 'render-relative-collections', with links: linklists['header-menu'].links %}
+{% render 'render-relative-collections', links: linklists.header-menu.links %}
 {% schema %}
   {
     "name": "Relative Collection",
@@ -9,4 +9,15 @@
       }
     ]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'render-relative-collections', with links: linklists['header-menu'].links
+    %}"
+  to: "{% render 'render-relative-collections', links: linklists.header-menu.links
+    %}"
+  position: 0..78
+{%- endcomment -%}

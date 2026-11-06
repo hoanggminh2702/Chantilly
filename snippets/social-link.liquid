@@ -2,17 +2,32 @@
 <div class="social-link-list flex justify-start">
   {%- if settings.social_facebook_link != blank -%}
     <a class="text-inherit social-link" href="{{settings.social_url}}">
-      {% render 'icon-by-name', with icon_name: "facebook" %}
+      {% render 'icon-by-name', icon_name: "facebook" %}
     </a>
   {%- endif -%}
   {%- if settings.social_youtube_link != blank -%}
     <a class="text-inherit social-link" href="{{settings.social_url}}">
-      {% render 'icon-by-name', with icon_name: "youtube" %}
+      {% render 'icon-by-name', icon_name: "youtube" %}
     </a>
   {%- endif -%}
   {%- if settings.social_instagram_link != blank -%}
     <a class="text-inherit social-link" href="{{settings.social_url}}">
-      {% render 'icon-by-name', with icon_name: "instagram" %}
+      {% render 'icon-by-name', icon_name: "instagram" %}
     </a>
   {%- endif -%}
-</div>
+</div>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''icon-by-name'', with icon_name: "facebook" %}'
+  to: '{% render ''icon-by-name'', icon_name: "facebook" %}'
+  position: 242..292
+- from: '{% render ''icon-by-name'', with icon_name: "youtube" %}'
+  to: '{% render ''icon-by-name'', icon_name: "youtube" %}'
+  position: 447..496
+- from: '{% render ''icon-by-name'', with icon_name: "instagram" %}'
+  to: '{% render ''icon-by-name'', icon_name: "instagram" %}'
+  position: 653..704
+{%- endcomment -%}
